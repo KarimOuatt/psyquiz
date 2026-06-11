@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>PsyQuiz — PSY2115T</title>
+
+<!-- Couleur de la barre + manifeste (PWA) -->
+<meta name="theme-color" content="#4f46e5">
+<link rel="manifest" href="manifest.json">
+
+<!-- Ajout à l'écran d'accueil (iPad / iPhone) -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="PsyQuiz">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======== ACCUEIL ======== -->
+<main id="view-home" class="view">
+  <header class="hero">
+    <span class="kicker">Psychopathologie · PSY2115T</span>
+    <h1>PsyQuiz <span class="brain">🧠</span></h1>
+    <p class="subtitle">Révise par chapitre, suis ta progression et entraîne-toi pour l'examen final.</p>
+  </header>
+
+  <section class="modes">
+    <button id="btn-exam" class="mode-btn primary">
+      <span class="mode-flag">Examen</span>
+      <span class="mode-tile">📝</span>
+      <span class="mode-label">Examen blanc</span>
+      <span class="mode-desc">30 questions chronométrées, tous les chapitres — comme le jour J</span>
+    </button>
+    <button id="btn-revision" class="mode-btn" disabled>
+      <span class="mode-tile">🎯</span>
+      <span class="mode-label">Révision ciblée</span>
+      <span class="mode-desc">Tes notions les plus fragiles en priorité</span>
+    </button>
+    <button id="btn-mixte" class="mode-btn">
+      <span class="mode-tile">🔀</span>
+      <span class="mode-label">Quiz mixte</span>
+      <span class="mode-desc">20 questions au hasard, avec correction immédiate</span>
+    </button>
+  </section>
+
+  <h2 class="section-title"><span class="st-emoji">📚</span> Chapitres</h2>
+  <section id="chapter-grid" class="chapter-grid"></section>
+
+  <section id="weak-panel" class="weak-panel hidden">
+    <h2 class="section-title"><span class="st-emoji">📌</span> Notions à renforcer</h2>
+    <p class="weak-hint">Tes taux de réussite les plus faibles, toutes parties confondues.</p>
+    <div id="weak-list" class="notion-list"></div>
+  </section>
+
+  <footer class="footer">
+    <p>D'après tes notes de cours : Cours 7 (Conduites alimentaires) · Cours 8 (Schizophrénie) · Cours 9a (Traumatismes &amp; stress) · Cours 9b (Substances) · Cours 10 (Personnalité)</p>
+    <button id="btn-reset" class="link-btn">Réinitialiser mes statistiques</button>
+  </footer>
+</main>
+
+<!-- ======== QUIZ ======== -->
+<main id="view-quiz" class="view hidden">
+  <header class="quiz-header">
+    <button id="btn-quit" class="icon-btn" title="Quitter">✕</button>
+    <div class="quiz-progress-wrap">
+      <div class="quiz-title-row">
+        <span id="quiz-title" class="quiz-title"></span>
+        <span id="quiz-counter" class="quiz-counter"></span>
+      </div>
+      <div class="progress-track"><div id="quiz-progress" class="progress-fill"></div></div>
+    </div>
+    <div class="chips">
+      <span class="chip timer hidden" id="chip-timer">⏱ 0:00</span>
+      <span class="chip" id="chip-score">✅ 0</span>
+      <span class="chip streak" id="chip-streak">🔥 0</span>
+    </div>
+  </header>
+
+  <section class="question-card" id="question-card">
+    <div class="tag-row">
+      <span class="notion-tag" id="notion-tag"></span>
+      <span class="type-tag hidden" id="type-tag"></span>
+    </div>
+    <h2 id="question-text" class="question-text"></h2>
+    <div id="options" class="options"></div>
+    <div id="feedback" class="feedback hidden">
+      <p id="feedback-msg" class="feedback-msg"></p>
+      <p id="feedback-expl" class="feedback-expl"></p>
+    </div>
+    <button id="btn-next" class="primary-btn hidden">Question suivante →</button>
+  </section>
+</main>
+
+<!-- ======== RÉSULTATS ======== -->
+<main id="view-results" class="view hidden">
+  <section class="results-card">
+    <span id="exam-verdict" class="verdict hidden"></span>
+    <h1 id="results-title" class="results-title"></h1>
+    <div class="ring-wrap">
+      <svg viewBox="0 0 120 120" class="ring">
+        <circle cx="60" cy="60" r="52" class="ring-bg"/>
+        <circle cx="60" cy="60" r="52" class="ring-fg" id="ring-fg"/>
+      </svg>
+      <div class="ring-center">
+        <span id="results-percent" class="ring-percent"></span>
+        <span id="results-detail" class="ring-detail"></span>
+      </div>
+    </div>
+    <p id="results-streak" class="results-streak"></p>
+    <p id="results-time" class="results-time hidden"></p>
+
+    <div id="results-chapters-block" class="hidden">
+      <h2 class="section-title">Résultats par chapitre</h2>
+      <div id="results-chapters" class="notion-list"></div>
+    </div>
+
+    <h2 class="section-title">Résultats par notion</h2>
+    <div id="results-notions" class="notion-list"></div>
+
+    <div id="results-weak" class="weak-callout hidden">
+      <h3>📌 À réviser en priorité</h3>
+      <ul id="results-weak-list"></ul>
+    </div>
+
+    <div id="results-review-block" class="hidden">
+      <h2 class="section-title">Correction détaillée</h2>
+      <div id="results-review" class="review-list"></div>
+    </div>
+
+    <div class="results-actions">
+      <button id="btn-replay" class="primary-btn">🔁 Rejouer</button>
+      <button id="btn-results-revision" class="secondary-btn">🎯 Réviser mes points faibles</button>
+      <button id="btn-home" class="secondary-btn">🏠 Accueil</button>
+    </div>
+  </section>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
