@@ -1719,6 +1719,708 @@ const QUIZ_DATA = {
           explication: "Personnalité évitante (groupe C) : inhibition sociale et hypersensibilité au rejet, AVEC un désir de relations. Le schizoïde, lui, ne recherche pas les relations et y est indifférent."
         }
       ]
+    },
+
+    {
+      id: "cours11",
+      titre: "Cours 11 — Dysphorie de genre, paraphilies et dysfonctions sexuelles",
+      court: "Sexualité & genre",
+      emoji: "🫂",
+      accent: "#3f8ecb",
+      questions: [
+        {
+          id: "c11-01", notion: "Introduction — sexe & genre", type: "qcm",
+          question: "Dans ce cours, comment distingue-t-on « sexe » et « genre » ?",
+          options: [
+            "Sexe = indicateurs biologiques (capacité reproductive) ; genre = rôle socioculturel",
+            "Sexe = rôle socioculturel ; genre = indicateurs biologiques",
+            "Les deux termes sont synonymes",
+            "Sexe = identité ressentie ; genre = sexe assigné"
+          ],
+          reponse: 0,
+          explication: "Sexe : indicateurs biologiques mâles/femelles (capacité reproductive). Genre : rôle socioculturel associé au fait d'être un garçon/une fille, un homme/une femme ou un autre genre. Domaine hautement controversé, vocabulaire évolutif."
+        },
+        {
+          id: "c11-02", notion: "Dysphorie de genre — critères", type: "qcm",
+          question: "Le critère A de la dysphorie de genre exige une non-congruence marquée entre genre vécu/exprimé et genre assigné, d'une durée minimale de…",
+          options: ["6 mois, avec au moins 2 manifestations", "1 mois, avec au moins 4 manifestations", "12 mois, avec au moins 3 manifestations", "3 mois, avec une seule manifestation"],
+          reponse: 0,
+          explication: "Critère A : non-congruence marquée d'au moins 6 mois, avec ≥ 2 des 6 items (p. ex. désir d'être débarrassé de ses caractéristiques sexuelles, désir d'appartenir à l'autre genre, etc.)."
+        },
+        {
+          id: "c11-03", notion: "Dysphorie de genre — critères", type: "vf",
+          question: "Le diagnostic de dysphorie de genre exige une détresse cliniquement significative ou une altération du fonctionnement (critère B).",
+          options: ["Vrai", "Faux"],
+          reponse: 0,
+          explication: "Vrai : c'est la détresse/l'altération qui est cliniquement pertinente (critère B). La non-congruence de genre en elle-même n'est pas un trouble — c'est la souffrance associée qui est visée."
+        },
+        {
+          id: "c11-04", notion: "Dysphorie de genre — critères", type: "qcm",
+          question: "Parmi les caractéristiques sexuelles SECONDAIRES, on trouve…",
+          options: [
+            "La poitrine, les poils pubiens, la voix, les menstruations",
+            "Les ovaires, l'utérus, le vagin",
+            "Le pénis, les testicules, la prostate",
+            "Les trompes de Fallope et le clitoris"
+          ],
+          reponse: 0,
+          explication: "Secondaires : poitrine, poils pubiens, voix, menstruations, éjaculation. Primaires : organes reproducteurs (vulve, ovaires, utérus, vagin / pénis, testicules, prostate)."
+        },
+        {
+          id: "c11-05", notion: "Dysphorie de genre — prévalence", type: "qcm",
+          question: "La prévalence chez les personnes qui se considèrent transgenres est estimée à…",
+          options: ["0,5 à 0,6 %", "5 à 6 %", "0,05 %", "10 à 15 %"],
+          reponse: 0,
+          explication: "Transgenres : 0,5-0,6 % ; incongruence de genre / divers genres : 0,6-1,1 %. Probable sous-estimation (tous ne consultent pas). Comorbidités : troubles anxieux, dépressifs, TSA, TSPT (p. ex. après intimidation sévère)."
+        },
+        {
+          id: "c11-06", notion: "Dysphorie de genre — cas", type: "cas",
+          question: "Depuis plus d'un an, une personne assignée garçon à la naissance ressent une non-congruence marquée avec son genre vécu, désire les caractéristiques de l'autre genre et veut être traitée comme telle ; cela cause une détresse importante. Diagnostic ?",
+          options: [
+            "Dysphorie de genre",
+            "Trouble transvestisme",
+            "Autre dysphorie de genre spécifiée",
+            "Aucun diagnostic : il n'y a pas de trouble"
+          ],
+          reponse: 0,
+          explication: "Non-congruence ≥ 6 mois + ≥ 2 items + détresse cliniquement significative (critère B) = dysphorie de genre. Le transvestisme, lui, concerne l'excitation sexuelle liée au travestissement (paraphilie) — tout autre chose."
+        },
+        {
+          id: "c11-07", notion: "Dysphorie de genre — étiologie", type: "qcm",
+          question: "Quel énoncé reflète l'étiologie de la dysphorie de genre vue en cours ?",
+          options: [
+            "Identité neurodéveloppementale multifactorielle (influences hormonales prénatales) ; pas de cause parentale démontrée",
+            "Cause unique et purement génétique avec biomarqueur diagnostique",
+            "Cause essentiellement éducative et parentale",
+            "Conséquence d'un trouble psychotique"
+          ],
+          reponse: 0,
+          explication: "Identité : neurodéveloppementale multifactorielle (hormones prénatales, hypothèse de différenciation cérébrale, composante génétique probable), sans biomarqueur. La dysphorie, elle, est fortement modulée par le contexte social (stigmatisation, rejet, discrimination). Pas de cause parentale démontrée."
+        },
+        {
+          id: "c11-08", notion: "Dysphorie de genre — traitement", type: "qcm",
+          question: "Selon la WPATH, l'objectif du traitement est…",
+          options: [
+            "Un confort personnel durable avec son identité de genre, pour optimiser santé et bien-être",
+            "Faire correspondre l'identité au sexe assigné à la naissance",
+            "Supprimer toute expression de genre",
+            "Uniquement la chirurgie d'affirmation"
+          ],
+          reponse: 0,
+          explication: "Objectif : « confort personnel durable avec leur identité de genre […] » (WPATH). Moyens possibles : hormonothérapie, chirurgies d'affirmation du genre, psychothérapie (traiter les comorbidités, faire face à la stigmatisation, faciliter la transition)."
+        },
+        {
+          id: "c11-09", notion: "Paraphilies — définitions", type: "qcm",
+          question: "Qu'est-ce qui distingue une paraphilie d'un TROUBLE paraphilique (DSM-5) ?",
+          options: [
+            "Le trouble cause une détresse/altération chez l'individu OU un préjudice (ou risque) à autrui, depuis > 6 mois",
+            "Le trouble est plus rare",
+            "La paraphilie implique toujours un crime",
+            "Il n'y a aucune différence"
+          ],
+          reponse: 0,
+          explication: "Paraphilie = intérêt sexuel intense pour des objets/activités inusités. Devient un TROUBLE paraphilique quand elle entraîne détresse/altération du fonctionnement, ou un préjudice (ou risque) à autrui, depuis plus de 6 mois."
+        },
+        {
+          id: "c11-10", notion: "Paraphilies — définitions", type: "vf",
+          question: "Les troubles paraphiliques sont très nettement plus fréquents chez les hommes.",
+          options: ["Vrai", "Faux"],
+          reponse: 0,
+          explication: "Vrai (H +++). Comorbidités fréquentes : schizophrénie, troubles dépressifs, troubles de la personnalité ; plusieurs paraphilies peuvent coexister chez un même individu. Statistiques imprécises."
+        },
+        {
+          id: "c11-11", notion: "Paraphilies — types", type: "qcm",
+          question: "Le trouble VOYEURISME se caractérise par l'excitation liée au fait de…",
+          options: [
+            "Observer une personne qui ne s'en doute pas, nue, se déshabillant ou ayant des rapports",
+            "Exhiber ses organes génitaux devant une personne prise au dépourvu",
+            "Toucher ou se frotter contre une personne non consentante",
+            "Se travestir"
+          ],
+          reponse: 0,
+          explication: "Voyeurisme : observer à l'insu de la personne (élément de risque, secret) ; implique rarement un contact. Apparaît à l'adolescence."
+        },
+        {
+          id: "c11-12", notion: "Paraphilies — types", type: "qcm",
+          question: "Quels deux troubles paraphiliques représentent la majorité des crimes sexuels signalés à la police ?",
+          options: [
+            "L'exhibitionnisme et le voyeurisme",
+            "Le fétichisme et le transvestisme",
+            "Le sadisme et le masochisme",
+            "La pédophilie et l'inceste"
+          ],
+          reponse: 0,
+          explication: "Exhibitionnisme (exhiber ses organes génitaux devant une personne prise au dépourvu) + voyeurisme : majorité des crimes sexuels signalés. L'exhibitionniste cherche rarement un contact avec la victime."
+        },
+        {
+          id: "c11-13", notion: "Paraphilies — types", type: "qcm",
+          question: "Le trouble FROTTEURISME consiste en l'excitation liée au fait de…",
+          options: [
+            "Toucher ou se frotter contre une personne non consentante",
+            "Observer une personne à son insu",
+            "Souffrir ou être humilié",
+            "Se frotter à des objets en latex"
+          ],
+          reponse: 0,
+          explication: "Frotteurisme : se frotter/toucher une personne non consentante, souvent dans des lieux permettant de s'échapper (autobus, foule). Apparaît à l'adolescence ; peu étudié."
+        },
+        {
+          id: "c11-14", notion: "Paraphilies — types", type: "qcm",
+          question: "Quelle est la différence entre sadisme et masochisme sexuels ?",
+          options: [
+            "Sadisme : excitation par la souffrance d'autrui ; masochisme : par le fait de souffrir/être humilié soi-même",
+            "Sadisme : souffrir soi-même ; masochisme : faire souffrir l'autre",
+            "Les deux concernent l'observation à l'insu d'autrui",
+            "Les deux concernent des objets fétiches"
+          ],
+          reponse: 0,
+          explication: "Sadisme : excitation provoquée par la souffrance psychologique ou physique d'une autre personne. Masochisme : excitation provoquée par le fait de souffrir ou d'être humilié soi-même (algolagnie)."
+        },
+        {
+          id: "c11-15", notion: "Paraphilies — pédophilie & inceste", type: "qcm",
+          question: "Selon les critères, le diagnostic de trouble pédophilie suppose notamment que l'individu…",
+          options: [
+            "Ait au moins 16 ans et au moins 5 ans de plus que l'enfant prépubère (≈ 13 ans ou moins)",
+            "Ait au moins 21 ans et 10 ans de plus que l'enfant",
+            "Soit toujours majeur de plus de 18 ans",
+            "Ait moins de 16 ans"
+          ],
+          reponse: 0,
+          explication: "Excitation/pulsions/comportements impliquant un enfant prépubère (≈ ≤ 13 ans) ; individu ≥ 16 ans ET ≥ 5 ans de plus que l'enfant. Le jugement clinique exclut les relations entre un grand adolescent et un enfant de 12-13 ans. Spécifications : exclusif/non, sexe ciblé, limité à l'inceste."
+        },
+        {
+          id: "c11-16", notion: "Paraphilies — pédophilie & inceste", type: "qcm",
+          question: "Quelle forme d'inceste est la plus fréquente ?",
+          options: [
+            "Frère-sœur, suivi de père-fille",
+            "Père-fils",
+            "Mère-fille",
+            "Oncle-neveu"
+          ],
+          reponse: 0,
+          explication: "Inceste frère-sœur le plus fréquent, suivi de père-fille. L'inceste est une spécification du trouble pédophilie dans le DSM-5-TR ; les victimes d'inceste sont souvent plus âgées que les victimes de pédophilie."
+        },
+        {
+          id: "c11-17", notion: "Paraphilies — types", type: "qcm",
+          question: "Le trouble FÉTICHISME se caractérise par…",
+          options: [
+            "Une excitation liée à des parties du corps ou des objets (p. ex. pieds, chaussures, latex), souvent préférés ou essentiels",
+            "L'excitation liée au travestissement",
+            "L'excitation liée à l'observation à l'insu d'autrui",
+            "L'excitation liée aux appels téléphoniques obscènes"
+          ],
+          reponse: 0,
+          explication: "Fétichisme : la présence du fétiche (partie du corps, objet) est préférée ou essentielle à l'excitation ; attrait ressenti comme involontaire, irrésistible, compulsif. Apparaît généralement à l'adolescence."
+        },
+        {
+          id: "c11-18", notion: "Paraphilies — types", type: "qcm",
+          question: "La scatologie téléphonique, la nécrophilie et la zoophilie sont classées comme…",
+          options: [
+            "Autres troubles paraphiliques spécifiés",
+            "Des dysfonctions sexuelles",
+            "Des sous-types de fétichisme",
+            "Des troubles de la communication"
+          ],
+          reponse: 0,
+          explication: "Autres troubles paraphiliques spécifiés : nécrophilie (cadavres), zoophilie (animaux), scatologie téléphonique (appels obscènes), coprophilie (excréments), urophilie (urine), etc."
+        },
+        {
+          id: "c11-19", notion: "Paraphilies — traitement", type: "qcm",
+          question: "Quel est l'axe principal de la TCC dans le traitement des troubles paraphiliques ?",
+          options: [
+            "Distorsions cognitives, contrôle des impulsions, empathie, prévention de la rechute",
+            "Hormonothérapie d'affirmation du genre",
+            "Inhibiteurs de la PDE-5",
+            "Renutrition progressive"
+          ],
+          reponse: 0,
+          explication: "TCC : identifier les distorsions cognitives, développer le contrôle des impulsions et l'empathie, comportements sécuritaires, prévention de la rechute (situations à risque, signes précurseurs). Pharmaco : ISRS (réduire pensées intrusives et compulsivité)."
+        },
+        {
+          id: "c11-20", notion: "Dysfonctions sexuelles — généralités", type: "qcm",
+          question: "Pour la plupart des dysfonctions sexuelles, la durée minimale exigée est de…",
+          options: ["6 mois, avec détresse cliniquement significative", "1 mois", "12 mois", "Aucune durée minimale"],
+          reponse: 0,
+          explication: "Symptômes persistants et récurrents depuis au moins 6 mois, avec détresse ou difficultés relationnelles. Comorbidité fréquente."
+        },
+        {
+          id: "c11-21", notion: "Dysfonctions sexuelles — réponse sexuelle", type: "qcm",
+          question: "Le modèle de la réponse sexuelle de Masters & Johnson (1966) comporte 4 phases :",
+          options: [
+            "Excitation, plateau, orgasme, résolution",
+            "Désir, attirance, orgasme, refus",
+            "Tension, relâchement, plaisir, sommeil",
+            "Excitation, désir, culpabilité, résolution"
+          ],
+          reponse: 0,
+          explication: "Modèle linéaire : excitation → plateau → orgasme → résolution. Le cycle de la réponse sexuelle ajoute le désir en amont (désir, excitation, orgasme, résolution)."
+        },
+        {
+          id: "c11-22", notion: "Dysfonctions sexuelles — spécifications", type: "qcm",
+          question: "Parmi les spécifications communes aux dysfonctions sexuelles, on trouve…",
+          options: [
+            "De tout temps / acquis, et généralisé / situationnel",
+            "Bizarre / non bizarre",
+            "Exclusif / non exclusif",
+            "Avec ou sans catatonie"
+          ],
+          reponse: 0,
+          explication: "Spécifications : (1) de tout temps vs acquis ; (2) généralisé vs situationnel ; (3) sévérité."
+        },
+        {
+          id: "c11-23", notion: "Dysfonctions sexuelles — cas", type: "cas",
+          question: "Depuis plus de 6 mois, dans presque tous les rapports, un homme éjacule environ une minute après la pénétration, avant de le souhaiter, ce qui le détresse. Diagnostic ?",
+          options: [
+            "Éjaculation prématurée (précoce)",
+            "Éjaculation retardée",
+            "Trouble de l'érection",
+            "Diminution du désir sexuel chez l'homme"
+          ],
+          reponse: 0,
+          explication: "Éjaculation environ 1 minute après la pénétration, avant de le vouloir, ≥ 6 mois (75-100 % des cas) = éjaculation prématurée — le problème sexuel le plus fréquent chez l'homme (prévalence 1-3 %, jusqu'à 20-30 % en mesurant l'insatisfaction)."
+        },
+        {
+          id: "c11-24", notion: "Dysfonctions sexuelles — types", type: "qcm",
+          question: "L'éjaculation retardée se caractérise par un retard/absence d'éjaculation dans 75-100 % des occasions, avec une prévalence d'environ…",
+          options: ["1 à 5 %", "15 à 20 %", "30 à 40 %", "0,1 %"],
+          reponse: 0,
+          explication: "Éjaculation retardée : prévalence 1-5 %. Facteurs étiologiques évoqués : peur de la fécondation, hostilité, peur de s'abandonner, ou cause biologique (certains tranquillisants)."
+        },
+        {
+          id: "c11-25", notion: "Dysfonctions sexuelles — types", type: "qcm",
+          question: "À propos du trouble de l'orgasme chez la femme, lequel est exact ?",
+          options: [
+            "C'est le 2e problème sexuel le plus courant chez les femmes ; l'orgasme féminin a un caractère largement appris",
+            "Il est toujours d'origine purement biologique",
+            "Il est associé à la reproduction comme l'éjaculation",
+            "Il ne cause jamais de détresse"
+          ],
+          reponse: 0,
+          explication: "2e problème sexuel le plus courant chez les femmes (10 % à vie). Facteurs : caractère appris de l'orgasme, méconnaissance de l'anatomie, difficulté à exprimer ses besoins, peur de perdre le contrôle, seuil orgasmique variable."
+        },
+        {
+          id: "c11-26", notion: "Dysfonctions sexuelles — types", type: "qcm",
+          question: "Le trouble de l'érection…",
+          options: [
+            "Voit sa prévalence augmenter avec l'âge (≈ 13-21 % des 40-80 ans, ≈ 2 % avant 40 ans)",
+            "Touche surtout les hommes de moins de 30 ans",
+            "Disparaît toujours sans traitement",
+            "N'a aucune cause biologique"
+          ],
+          reponse: 0,
+          explication: "Incapacité persistante à obtenir/maintenir une érection (≥ 6 mois). Causes : effets de médicaments, maladies (diabète, alcoolisme chronique), dépression/anxiété, cercle vicieux de la peur de l'échec. Prévalence ↑ avec l'âge."
+        },
+        {
+          id: "c11-27", notion: "Dysfonctions sexuelles — types", type: "qcm",
+          question: "Le trouble lié à des douleurs génito-pelviennes ou à la pénétration a une prévalence d'environ…",
+          options: ["15 %", "1 %", "40 %", "0,5 %"],
+          reponse: 0,
+          explication: "Prévalence ≈ 15 %. Difficultés de pénétration, douleur vulvovaginale/pelvienne, peur anticipatoire, crispation du plancher pelvien (≥ 6 mois). Facteurs : partenaire, relationnels, vulnérabilité individuelle (image du corps, abus), culturels/religieux."
+        },
+        {
+          id: "c11-28", notion: "Dysfonctions sexuelles — types", type: "qcm",
+          question: "Le diagnostic de « trouble de l'intérêt/excitation sexuelle chez la femme » exige la présence d'au moins…",
+          options: ["3 des critères (absence/diminution d'intérêt, de fantasmes, d'excitation…)", "1 seul critère", "Tous les 6 critères", "5 des 6 critères"],
+          reponse: 0,
+          explication: "Au moins 3 critères parmi : intérêt sexuel, fantasmes, initiation/réactivité, excitation/plaisir (≥ 75 % de l'activité), réponse aux stimuli érotiques, sensations génitales/non génitales — pendant au moins 6 mois."
+        },
+        {
+          id: "c11-29", notion: "Dysfonctions sexuelles — étiologie", type: "qcm",
+          question: "Parmi les facteurs BIOLOGIQUES des dysfonctions sexuelles, on retrouve…",
+          options: [
+            "Causes vasculaires, neurologiques, endocriniennes et effets secondaires médicamenteux",
+            "Uniquement des conflits de couple",
+            "Uniquement des distorsions cognitives",
+            "Le conditionnement sexuel"
+          ],
+          reponse: 0,
+          explication: "Facteurs biologiques : vasculaires (maladies cardiovasculaires), neurologiques, endocriniens, effets secondaires de médicaments. S'ajoutent des facteurs psychologiques et relationnels."
+        },
+        {
+          id: "c11-30", notion: "Dysfonctions sexuelles — traitement", type: "qcm",
+          question: "Sur le plan pharmacologique, quel traitement correspond à quelle dysfonction ?",
+          options: [
+            "Inhibiteurs de la PDE-5 → dysfonction érectile ; ISRS → éjaculation précoce",
+            "PDE-5 → éjaculation précoce ; ISRS → dysfonction érectile",
+            "Antipsychotiques → dysfonction érectile",
+            "ISRS → dysfonction érectile uniquement"
+          ],
+          reponse: 0,
+          explication: "Inhibiteurs de la PDE-5 (Viagra, Cialis, Levitra) pour la dysfonction érectile ; ISRS pour l'éjaculation précoce ; et traitement des causes médicales sous-jacentes. La thérapie sexuelle et la TCC restent centrales."
+        }
+      ]
+    },
+
+    {
+      id: "cours12",
+      titre: "Cours 12 — Troubles de l'enfance",
+      court: "Enfance",
+      emoji: "🧸",
+      accent: "#5aa46a",
+      questions: [
+        {
+          id: "c12-01", notion: "Troubles neurodéveloppementaux — vue d'ensemble", type: "qcm",
+          question: "Lequel fait partie des troubles NEURODÉVELOPPEMENTAUX ?",
+          options: [
+            "Le trouble du spectre de l'autisme (TSA)",
+            "Le trouble oppositionnel avec provocation",
+            "Le trouble des conduites",
+            "L'anxiété de séparation"
+          ],
+          reponse: 0,
+          explication: "Neurodéveloppementaux : handicaps intellectuels, troubles de la communication, TSA, TDA/H, trouble spécifique des apprentissages, troubles moteurs. Les autres réponses appartiennent aux troubles disruptifs ou anxieux."
+        },
+        {
+          id: "c12-02", notion: "Handicap intellectuel", type: "qcm",
+          question: "Quels sont les critères clés du handicap intellectuel ?",
+          options: [
+            "Déficit intellectuel (QI < 70-75) + déficit du fonctionnement adaptatif, avant 18 ans",
+            "QI < 100 après 18 ans",
+            "Uniquement un QI bas, sans autre critère",
+            "Un déficit présent seulement à l'âge adulte"
+          ],
+          reponse: 0,
+          explication: "Avant 18 ans : déficit des fonctions intellectuelles (QI < 70-75, ≈ 3 % de la pop.) confirmé par tests standardisés, ET déficit du fonctionnement adaptatif."
+        },
+        {
+          id: "c12-03", notion: "Handicap intellectuel", type: "qcm",
+          question: "Le fonctionnement adaptatif s'évalue sur 3 domaines :",
+          options: [
+            "Conceptuel (scolaire), social et pratique",
+            "Moteur, verbal et sensoriel",
+            "Affectif, cognitif et biologique",
+            "Familial, scolaire et professionnel"
+          ],
+          reponse: 0,
+          explication: "3 domaines : conceptuel (scolaire), social, pratique — p. ex. concept du temps et de l'argent, autonomie."
+        },
+        {
+          id: "c12-04", notion: "Handicap intellectuel", type: "qcm",
+          question: "Quel niveau de sévérité du handicap intellectuel concerne environ 85 % des personnes avec un QI < 70 ?",
+          options: ["Léger (QI ≈ 50-70)", "Moyen", "Grave", "Profond"],
+          reponse: 0,
+          explication: "Léger (QI ≈ 50-70) : 85 %. Moyen : 10 % · grave : 3-4 % · profond (QI < 20-25, supervision intégrale, soins à vie) : 1-2 %."
+        },
+        {
+          id: "c12-05", notion: "Handicap intellectuel", type: "qcm",
+          question: "Parmi les causes GÉNÉTIQUES du handicap intellectuel, on cite typiquement…",
+          options: [
+            "La trisomie 21, le syndrome de l'X fragile, le syndrome de Williams",
+            "Le syndrome d'alcoolisation fœtale",
+            "La méningite et l'encéphalite",
+            "L'hypoxie périnatale"
+          ],
+          reponse: 0,
+          explication: "Génétiques : trisomie 21, X fragile, syndromes de Williams/Angelman, erreurs innées du métabolisme. (Le SAF est prénatal ; méningite/encéphalite sont postnataux ; l'hypoxie est périnatale.)"
+        },
+        {
+          id: "c12-06", notion: "Troubles de la communication", type: "qcm",
+          question: "Le bégaiement correspond à quel trouble de la communication ?",
+          options: [
+            "Le trouble de la fluidité verbale",
+            "Le trouble du langage",
+            "Le trouble de la phonation",
+            "Le trouble de la communication sociale"
+          ],
+          reponse: 0,
+          explication: "Trouble de la fluidité verbale (bégaiement) : répétitions/prolongements de sons, pauses, substitutions. Apparaît vers 5 ans, surtout chez les garçons ; 65-85 % le surmontent (la sévérité à 8 ans est pronostique)."
+        },
+        {
+          id: "c12-07", notion: "Troubles de la communication", type: "qcm",
+          question: "Quel trouble de la communication a été AJOUTÉ au DSM-5 ?",
+          options: [
+            "Le trouble de la communication sociale (pragmatique)",
+            "Le trouble du langage",
+            "Le trouble de la phonation",
+            "Le bégaiement"
+          ],
+          reponse: 0,
+          explication: "Le trouble de la communication sociale (pragmatique) : difficultés persistantes à utiliser la communication verbale et non verbale en contexte social (adapter son langage à l'interlocuteur, à la situation)."
+        },
+        {
+          id: "c12-08", notion: "Troubles de la communication", type: "qcm",
+          question: "Quelle est la différence entre trouble du langage et trouble de la phonation ?",
+          options: [
+            "Langage : difficulté à s'exprimer/structurer (mots, grammaire) ; phonation : vocabulaire large mais prononciation déficiente",
+            "Langage : prononciation déficiente ; phonation : grammaire pauvre",
+            "Les deux désignent le bégaiement",
+            "Les deux sont des troubles moteurs"
+          ],
+          reponse: 0,
+          explication: "Trouble du langage : difficulté d'acquisition/utilisation (phrases brèves, grammaire inférieure, oubli de mots). Trouble de la phonation : comprend et a un vocabulaire large, mais prononce mal (« bruit » → « buit »)."
+        },
+        {
+          id: "c12-09", notion: "TSA — critères", type: "qcm",
+          question: "Le critère A du TSA (déficits de la communication sociale) exige…",
+          options: [
+            "Les 3 manifestations : réciprocité socio-émotionnelle, communication non verbale, et relations",
+            "Au moins 1 des 3 manifestations",
+            "Au moins 2 des 4 manifestations",
+            "Aucune manifestation précise"
+          ],
+          reponse: 0,
+          explication: "Critère A : déficits persistants dans la communication sociale, illustrés par les 3 domaines (réciprocité socio-émotionnelle ; comportements non verbaux ; développement/maintien des relations) — tous présents."
+        },
+        {
+          id: "c12-10", notion: "TSA — critères", type: "qcm",
+          question: "Le critère B du TSA (modes restreints/répétitifs) exige au moins…",
+          options: [
+            "2 des 4 éléments (stéréotypies, insistance sur la similarité, intérêts restreints, particularités sensorielles)",
+            "1 des 4 éléments",
+            "3 des 4 éléments",
+            "Les 4 éléments"
+          ],
+          reponse: 0,
+          explication: "Critère B : ≥ 2 parmi — mouvements/paroles stéréotypés (écholalie), insistance sur la similarité/rituels, intérêts très restreints et intenses, hyper/hyporéactivité sensorielle."
+        },
+        {
+          id: "c12-11", notion: "TSA — cas", type: "cas",
+          question: "Un enfant a peu de contact visuel et de réciprocité sociale, exige des routines fixes (détresse au moindre changement), a un intérêt très intense pour les horaires de trains et réagit fortement à certaines textures. Symptômes présents depuis la petite enfance. Diagnostic le plus probable ?",
+          options: [
+            "Trouble du spectre de l'autisme",
+            "Trouble du langage",
+            "TDAH, présentation inattention prédominante",
+            "Trouble de la communication sociale isolé"
+          ],
+          reponse: 0,
+          explication: "Déficits de communication sociale (critère A) + modes restreints/répétitifs (routines rigides, intérêt circonscrit, particularités sensorielles = critère B), début précoce → TSA."
+        },
+        {
+          id: "c12-12", notion: "TSA — critères", type: "vf",
+          question: "Les symptômes du TSA doivent être présents dès la période de développement précoce, même s'ils peuvent ne devenir pleinement manifestes que plus tard.",
+          options: ["Vrai", "Faux"],
+          reponse: 0,
+          explication: "Vrai : début précoce, mais les symptômes peuvent n'apparaître clairement que lorsque les exigences sociales dépassent les capacités (école, adolescence), ou être masqués par des stratégies apprises."
+        },
+        {
+          id: "c12-13", notion: "TSA — sévérité & étiologie", type: "qcm",
+          question: "Comment se spécifie la sévérité du TSA ?",
+          options: [
+            "Selon le niveau de soutien requis (demande de soutien, substantiel, très substantiel)",
+            "Selon le QI uniquement",
+            "Selon l'âge d'apparition",
+            "Selon la durée des symptômes"
+          ],
+          reponse: 0,
+          explication: "Sévérité fondée sur les déficits des critères A et B, exprimée en niveau de soutien : « demande de soutien », « substantiel », « très substantiel ». On spécifie aussi : avec/sans déficit intellectuel ou langagier, catatonie, etc."
+        },
+        {
+          id: "c12-14", notion: "TSA — sévérité & étiologie", type: "qcm",
+          question: "Que dit le cours sur l'héritabilité du TSA ?",
+          options: [
+            "Très élevée (≈ 60-90 %), la plus forte même comparée à la schizophrénie et au trouble bipolaire",
+            "Faible, surtout d'origine environnementale",
+            "Nulle",
+            "Identique à celle des troubles anxieux"
+          ],
+          reponse: 0,
+          explication: "Héritabilité très élevée (≈ 60-90 %), des centaines de gènes impliqués — la plus forte, devant la schizophrénie et la bipolarité. Étiologie principalement génétique et neurobiologique."
+        },
+        {
+          id: "c12-15", notion: "TSA — traitement", type: "qcm",
+          question: "Concernant le traitement du TSA, lequel est exact ?",
+          options: [
+            "Aucun médicament ne traite les symptômes principaux ; interventions psychosociales intensives ; antipsychotiques parfois pour l'agressivité/l'automutilation",
+            "Un médicament guérit le TSA",
+            "Seule la pharmacothérapie est efficace",
+            "Aucune intervention n'est utile"
+          ],
+          reponse: 0,
+          explication: "Interventions psychosociales intensives (≈ 20 h/sem) : fonctionnement social, communication, réduction des comportements perturbateurs. Pas de médicament pour les symptômes principaux ; antipsychotiques pour certains symptômes (automutilation, agressivité)."
+        },
+        {
+          id: "c12-16", notion: "TDAH — critères", type: "qcm",
+          question: "Pour un enfant, combien de symptômes d'inattention (ou d'hyperactivité-impulsivité) faut-il, et depuis combien de temps ?",
+          options: [
+            "6 symptômes ou plus, depuis au moins 6 mois (5 si 17 ans et +)",
+            "3 symptômes depuis 1 mois",
+            "2 symptômes depuis 12 mois",
+            "Un seul symptôme suffit"
+          ],
+          reponse: 0,
+          explication: "≥ 6 symptômes (≥ 5 chez les 17 ans et plus) persistant ≥ 6 mois, à un degré inadapté au développement, avec retentissement social/scolaire."
+        },
+        {
+          id: "c12-17", notion: "TDAH — critères", type: "qcm",
+          question: "Deux conditions « contextuelles » du TDAH sont…",
+          options: [
+            "Plusieurs symptômes avant 12 ans, et présents dans au moins 2 contextes",
+            "Symptômes après 18 ans, dans 1 seul contexte",
+            "Symptômes uniquement à l'école",
+            "Apparition soudaine à l'adolescence"
+          ],
+          reponse: 0,
+          explication: "Plusieurs symptômes présents avant 12 ans ET dans ≥ 2 situations (maison, école, travail, amis…), avec une interférence claire sur le fonctionnement."
+        },
+        {
+          id: "c12-18", notion: "TDAH — critères", type: "qcm",
+          question: "Quelles sont les 3 présentations du TDAH ?",
+          options: [
+            "Combinée · inattention prédominante · hyperactivité/impulsivité prédominante",
+            "Légère · moyenne · grave (uniquement)",
+            "Précoce · tardive · résiduelle",
+            "Verbale · motrice · mixte"
+          ],
+          reponse: 0,
+          explication: "Présentations : combinée (A1 + A2), inattention prédominante (A1 sans A2), hyperactivité/impulsivité prédominante (A2 sans A1). On spécifie aussi la sévérité (léger/moyen/grave)."
+        },
+        {
+          id: "c12-19", notion: "TDAH — étiologie", type: "qcm",
+          question: "Que retient-on de l'étiologie du TDAH ?",
+          options: [
+            "Caractère héréditaire élevé (≈ 75 %), déficit du contrôle inhibiteur (circuit frontostriatal), déficit dopaminergique",
+            "Cause unique : la mauvaise éducation parentale",
+            "Cause uniquement environnementale (alimentation)",
+            "Aucune composante génétique"
+          ],
+          reponse: 0,
+          explication: "Héréditabilité ≈ 75 %, déficit du contrôle inhibiteur (circuit frontostriatal), réduction de volume cérébral, retards de maturation corticale, déficit de dopamine. La relation parents-enfant influence la trajectoire mais n'est pas une cause."
+        },
+        {
+          id: "c12-20", notion: "TDAH — traitement", type: "qcm",
+          question: "Le traitement du TDAH repose surtout sur…",
+          options: [
+            "Une combinaison pharmacothérapie + interventions psychosociales (la médication aide environ 1 personne sur 2)",
+            "La médication seule, toujours suffisante",
+            "Aucune intervention, ça passe avec l'âge",
+            "La chirurgie"
+          ],
+          reponse: 0,
+          explication: "Combinaison médication + interventions psychosociales (formation aux parents et enseignants, conditionnement opérant en classe). La médication fonctionne chez ≈ ½. Les traitements comportementaux visent le scolaire, les tâches et les habiletés sociales — pas directement l'hyperactivité."
+        },
+        {
+          id: "c12-21", notion: "Trouble spécifique des apprentissages", type: "qcm",
+          question: "La dyslexie, la dyscalculie et la dysorthographie correspondent respectivement à des déficits de…",
+          options: [
+            "Lecture · calcul · expression écrite",
+            "Calcul · lecture · motricité",
+            "Langage · phonation · fluidité",
+            "Attention · mémoire · motricité"
+          ],
+          reponse: 0,
+          explication: "Trouble spécifique des apprentissages : déficit de lecture (dyslexie), de calcul (dyscalculie), de l'expression écrite (dysorthographie). ≥ 6 mois malgré interventions, non attribuable à une déficience intellectuelle ou sensorielle. Traitement : orthopédagogie."
+        },
+        {
+          id: "c12-22", notion: "Troubles moteurs", type: "qcm",
+          question: "Le syndrome de Gilles de la Tourette appartient à quelle catégorie ?",
+          options: [
+            "Les troubles moteurs (tics)",
+            "Les troubles de la communication",
+            "Les troubles disruptifs",
+            "Les troubles anxieux"
+          ],
+          reponse: 0,
+          explication: "Troubles moteurs : trouble développemental de la coordination, mouvements stéréotypés, et tics (mouvements/vocalisations soudains, rapides, récurrents, non rythmiques) — dont le syndrome de Gilles de la Tourette."
+        },
+        {
+          id: "c12-23", notion: "Trouble des conduites", type: "qcm",
+          question: "Le trouble des conduites se diagnostique par la présence de…",
+          options: [
+            "≥ 3 critères sur 12 mois (et ≥ 1 sur 6 mois) bafouant les droits d'autrui ou les normes sociales",
+            "1 seul critère sur 1 mois",
+            "≥ 5 critères sur 1 mois",
+            "Uniquement des symptômes d'inattention"
+          ],
+          reponse: 0,
+          explication: "Conduites répétitives bafouant les droits d'autrui/les normes : ≥ 3 critères sur 12 mois, ≥ 1 sur 6 mois, répartis en 4 catégories — agressions (personnes/animaux), destruction de biens, fraude/vol, violations graves de règles."
+        },
+        {
+          id: "c12-24", notion: "Trouble des conduites", type: "qcm",
+          question: "Concernant l'évolution du trouble des conduites, lequel est exact ?",
+          options: [
+            "Un début avant 10 ans est plus problématique et persistant ; il peut évoluer vers une personnalité antisociale",
+            "Il disparaît toujours à l'âge adulte",
+            "Il n'a aucun lien avec la personnalité antisociale",
+            "Il apparaît surtout après 18 ans"
+          ],
+          reponse: 0,
+          explication: "Deux trajectoires : enfant avec trouble des conduites → adulte avec personnalité antisociale (+ chez les garçons) ; adolescent avec trouble des conduites → souvent mode de vie adulte non problématique. Début < 10 ans = plus grave/persistant."
+        },
+        {
+          id: "c12-25", notion: "Trouble des conduites", type: "qcm",
+          question: "Quelle spécification du trouble des conduites annonce un pronostic plus sévère ?",
+          options: [
+            "Le sous-type avec traits de dureté (insensibilité) — manque d'empathie",
+            "Le sous-type situationnel",
+            "Le sous-type acquis",
+            "Le sous-type généralisé"
+          ],
+          reponse: 0,
+          explication: "Le sous-type « dureté/insensibilité » (manque d'empathie, comportements agressifs/antisociaux graves) est associé à un pronostic plus sévère et un risque antisocial élevé."
+        },
+        {
+          id: "c12-26", notion: "Trouble oppositionnel avec provocation (TOP)", type: "qcm",
+          question: "Le TOP associe sur ≥ 6 mois (au moins 4 symptômes)…",
+          options: [
+            "Humeur colérique/irritable, comportement querelleur/provocateur et esprit vindicatif",
+            "Inattention, hyperactivité et impulsivité",
+            "Agressions, destruction de biens et vols",
+            "Déficits sociaux et intérêts restreints"
+          ],
+          reponse: 0,
+          explication: "TOP : ≥ 4 symptômes sur ≥ 6 mois répartis en humeur colérique/irritable, comportement querelleur/provocateur, et esprit vindicatif, en interaction avec au moins une personne hors fratrie."
+        },
+        {
+          id: "c12-27", notion: "Trouble oppositionnel avec provocation (TOP)", type: "qcm",
+          question: "Quel mécanisme cognitif est typiquement impliqué dans le TOP ?",
+          options: [
+            "Le biais d'attribution hostile (interpréter les intentions d'autrui comme négatives)",
+            "La pensée magique",
+            "Les flashbacks",
+            "La distorsion de l'image corporelle"
+          ],
+          reponse: 0,
+          explication: "Biais d'attribution hostile + cercle coercitif (opposition → réaction parentale → escalade → renforcement). La plupart des jeunes avec trouble des conduites ont reçu un diagnostic de TOP (pas l'inverse) ; forte comorbidité avec le TDAH."
+        },
+        {
+          id: "c12-28", notion: "Troubles disruptifs — traitement", type: "qcm",
+          question: "Quelle approche est recommandée pour le trouble des conduites ?",
+          options: [
+            "Interventions familiales (coaching parental), collaboration avec l'école, traitement multisystémique",
+            "Uniquement la médication",
+            "Aucune intervention",
+            "La chirurgie"
+          ],
+          reponse: 0,
+          explication: "Coaching des parents (renforcer le prosocial, retirer des privilèges), collaboration avec les enseignants, traitement multisystémique (famille, école, pairs), et approches cognitives (maîtrise de la colère, raisonnement moral). Pour les traits de dureté : susciter l'empathie."
+        },
+        {
+          id: "c12-29", notion: "Anxiété de séparation", type: "cas",
+          question: "Un enfant de 8 ans refuse d'aller à l'école et de dormir hors de chez lui, fait des cauchemars de séparation et a des maux de ventre dès qu'il doit quitter ses parents, depuis 6 semaines. Diagnostic ?",
+          options: [
+            "Anxiété de séparation",
+            "Mutisme sélectif",
+            "Phobie spécifique",
+            "Trouble oppositionnel avec provocation"
+          ],
+          reponse: 0,
+          explication: "Détresse excessive à la séparation, refus de l'école/de dormir ailleurs, cauchemars de séparation, plaintes somatiques — durée ≥ 4 semaines chez l'enfant/ado (6 mois chez l'adulte) = anxiété de séparation."
+        },
+        {
+          id: "c12-30", notion: "Mutisme sélectif", type: "cas",
+          question: "Une fillette parle normalement à la maison mais reste totalement silencieuse à l'école depuis plus de 2 mois, ce qui nuit à sa scolarité. Sa connaissance de la langue est intacte. Diagnostic ?",
+          options: [
+            "Mutisme sélectif",
+            "Trouble du langage",
+            "Trouble du spectre de l'autisme",
+            "Anxiété de séparation"
+          ],
+          reponse: 0,
+          explication: "Incapacité régulière à parler dans des situations sociales spécifiques (école) alors qu'elle parle ailleurs, ≥ 1 mois (pas seulement le 1er mois d'école), non imputable à un défaut de langue = mutisme sélectif."
+        },
+        {
+          id: "c12-31", notion: "Troubles anxieux — traitement", type: "qcm",
+          question: "Quel est le traitement de référence des troubles anxieux de l'enfant ?",
+          options: [
+            "La TCC (exposition, relaxation, jeux de rôles, méthodes cognitives), proche de celle de l'adulte",
+            "Uniquement la médication",
+            "L'hospitalisation systématique",
+            "Aucun, les peurs disparaissent toujours seules"
+          ],
+          reponse: 0,
+          explication: "TCC : exposition, relaxation, jeux de rôles, dialogue interne ; objectif : reconnaître les signes d'anxiété pour déclencher les stratégies de gestion. La médication a une efficacité démontrée dans certaines études, mais la psychothérapie reste primordiale."
+        }
+      ]
     }
   ]
 };
