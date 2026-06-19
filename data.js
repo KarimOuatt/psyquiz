@@ -469,6 +469,22 @@ const QUIZ_DATA = {
           question: "Comment nomme-t-on le fin duvet corporel qui apparaît dans l'anorexie sévère ?",
           reponse: "lanugo", accepts: ["lanugo"],
           explication: "Le lanugo est un fin duvet qui apparaît avec la dénutrition de l'anorexie."
+        },
+        {
+          id: "c7-x1", notion: "Discrimination AN / boulimie / AH", type: "match",
+          question: "Associe chaque trouble alimentaire à sa caractéristique clé.",
+          pairs: [
+            { l: "Anorexie", r: "Poids significativement bas par restriction" },
+            { l: "Boulimie", r: "Crises + comportements compensatoires" },
+            { l: "Accès hyperphagiques", r: "Crises sans comportements compensatoires" }
+          ],
+          explication: "Anorexie = poids bas (restriction) ; boulimie = crises + compensations ; accès hyperphagiques = crises sans compensation, à poids souvent normal."
+        },
+        {
+          id: "c7-o1", notion: "Anorexie — sévérité (IMC)", type: "ordre",
+          question: "Classe les niveaux de sévérité de l'anorexie du MOINS au PLUS sévère (selon l'IMC).",
+          items: ["Léger (IMC ≥ 17)", "Moyen (IMC 16-16,99)", "Grave (IMC 15-15,99)", "Extrême (IMC < 15)"],
+          explication: "Sévérité par IMC : léger ≥ 17 · moyen 16-16,99 · grave 15-15,99 · extrême < 15 kg/m²."
         }
       ]
     },
@@ -926,6 +942,23 @@ const QUIZ_DATA = {
           question: "Comment appelle-t-on la répétition automatique des paroles d'autrui (catatonie) ?",
           reponse: "écholalie", accepts: ["echolalie"],
           explication: "Écholalie = répéter les paroles ; échopraxie = répéter les gestes."
+        },
+        {
+          id: "c8-x1", notion: "Idées délirantes", type: "match",
+          question: "Associe chaque type d'idée délirante à son exemple.",
+          pairs: [
+            { l: "Érotomaniaque", r: "« Une vedette est amoureuse de moi »" },
+            { l: "Persécution", r: "« On complote contre moi »" },
+            { l: "Mégalomaniaque", r: "« J'ai un talent exceptionnel non reconnu »" },
+            { l: "Somatique", r: "« Un parasite vit dans mon corps »" }
+          ],
+          explication: "Érotomaniaque : être aimé ; persécution : complot/préjudice ; mégalomaniaque : grandeur/talent ; somatique : fonctions ou sensations corporelles."
+        },
+        {
+          id: "c8-o1", notion: "Spectre psychotique (durées)", type: "ordre",
+          question: "Classe ces troubles psychotiques du plus COURT au plus LONG (durée).",
+          items: ["Trouble psychotique bref (< 1 mois)", "Trouble schizophréniforme (1-6 mois)", "Schizophrénie (≥ 6 mois)"],
+          explication: "Bref : 1 jour-1 mois · schizophréniforme : 1-6 mois · schizophrénie : ≥ 6 mois."
         }
       ]
     },
@@ -1349,6 +1382,23 @@ const QUIZ_DATA = {
           question: "Quel type de réaction dissociative fait revivre l'événement comme s'il se reproduisait ?",
           reponse: "flashback", accepts: ["flashback", "flashbacks", "flash back"],
           explication: "Les flashbacks sont des réactions dissociatives appartenant au critère B."
+        },
+        {
+          id: "c9a-x1", notion: "Évitement & altérations cognitives (C, D)", type: "match",
+          question: "Associe chaque critère du TSPT à une manifestation typique.",
+          pairs: [
+            { l: "Critère B (envahissant)", r: "Flashbacks et cauchemars" },
+            { l: "Critère C (évitement)", r: "Éviter les rappels du trauma" },
+            { l: "Critère D (cognitions/humeur)", r: "Croyances négatives, détachement" },
+            { l: "Critère E (éveil)", r: "Hypervigilance, sursaut exagéré" }
+          ],
+          explication: "B = symptômes envahissants ; C = évitement ; D = altérations des cognitions et de l'humeur ; E = altérations de l'éveil et de la réactivité."
+        },
+        {
+          id: "c9a-o1", notion: "Durée & spécifications", type: "ordre",
+          question: "Remets dans l'ordre chronologique l'évolution possible après un trauma.",
+          items: ["Événement traumatique", "Stress aigu (3 jours-1 mois)", "TSPT (plus d'1 mois)", "Expression retardée (≥ 6 mois)"],
+          explication: "Après l'événement : stress aigu (3 j-1 mois) ; au-delà d'1 mois → TSPT ; si les critères n'apparaissent qu'à ≥ 6 mois → expression retardée."
         }
       ]
     },
@@ -1789,6 +1839,23 @@ const QUIZ_DATA = {
           question: "Quel terme anglais désigne l'envie impérieuse de consommer une substance ?",
           reponse: "craving", accepts: ["craving"],
           explication: "Le craving (envie impérieuse) appartient au groupe « réduction du contrôle »."
+        },
+        {
+          id: "c9b-x1", notion: "Étiologie — facteurs psychologiques", type: "match",
+          question: "Associe chaque « raison de boire » à son échelle.",
+          pairs: [
+            { l: "Renforcement", r: "Interne positive (état d'esprit positif)" },
+            { l: "Compensation", r: "Interne négative (éviter des émotions négatives)" },
+            { l: "Sociale", r: "Externe positive (gratifications sociales)" },
+            { l: "Conformité", r: "Externe négative (éviter la gêne due à autrui)" }
+          ],
+          explication: "Renforcement = interne + ; compensation = interne − ; sociale = externe + ; conformité = externe −. Le boire devient problématique surtout en mode compensation."
+        },
+        {
+          id: "c9b-o1", notion: "Trouble de l'usage — critères", type: "ordre",
+          question: "Classe la sévérité du trouble de l'usage du MOINS au PLUS grave.",
+          items: ["Léger (2-3 critères)", "Moyen (4-5 critères)", "Grave (6 critères et plus)"],
+          explication: "Léger 2-3 · moyen 4-5 · grave ≥ 6 symptômes sur 12 mois."
         }
       ]
     },
@@ -2307,6 +2374,22 @@ const QUIZ_DATA = {
           question: "Quel mécanisme désigne l'incapacité à former des idées nuancées (alternance idéalisation/dévalorisation) ?",
           reponse: "clivage", accepts: ["clivage"],
           explication: "Le clivage est notamment travaillé par la psychothérapie focalisée sur le transfert (TFP)."
+        },
+        {
+          id: "c10-x1", notion: "Les 3 groupes (clusters)", type: "match",
+          question: "Associe chaque groupe (cluster) de troubles de la personnalité à sa description.",
+          pairs: [
+            { l: "Groupe A", r: "Bizarre / excentrique" },
+            { l: "Groupe B", r: "Théâtral, émotif, capricieux" },
+            { l: "Groupe C", r: "Anxieux / craintif" }
+          ],
+          explication: "A (paranoïaque, schizoïde, schizotypique) = bizarre ; B (borderline, histrionique, narcissique, antisociale) = théâtral/émotif ; C (évitante, dépendante, OCPD) = anxieux."
+        },
+        {
+          id: "c10-o1", notion: "Les 3 groupes (clusters)", type: "ordre",
+          question: "Classe ces troubles selon le nombre MINIMAL de manifestations requis (croissant).",
+          items: ["Antisociale (≥ 3)", "Paranoïaque (≥ 4)", "Borderline (≥ 5)"],
+          explication: "Antisociale ≥ 3 ; paranoïaque/schizoïde/évitante/OCPD ≥ 4 ; schizotypique/borderline/histrionique/narcissique/dépendante ≥ 5."
         }
       ]
     },
@@ -2755,6 +2838,23 @@ const QUIZ_DATA = {
           question: "Comment nomme-t-on un intérêt sexuel intense et persistant pour des objets ou activités inusités ?",
           reponse: "paraphilie", accepts: ["paraphilie", "paraphilies"],
           explication: "Une paraphilie devient un trouble paraphilique en cas de détresse/altération ou de préjudice à autrui."
+        },
+        {
+          id: "c11-x1", notion: "Paraphilies — types", type: "match",
+          question: "Associe chaque trouble paraphilique à sa définition.",
+          pairs: [
+            { l: "Voyeurisme", r: "Observer une personne à son insu" },
+            { l: "Exhibitionnisme", r: "Exhiber ses organes génitaux" },
+            { l: "Frotteurisme", r: "Se frotter à une personne non consentante" },
+            { l: "Fétichisme", r: "Excitation liée à un objet ou une partie du corps" }
+          ],
+          explication: "Voyeurisme = observer ; exhibitionnisme = montrer ; frotteurisme = toucher/se frotter ; fétichisme = objet/partie du corps."
+        },
+        {
+          id: "c11-o1", notion: "Dysfonctions sexuelles — réponse sexuelle", type: "ordre",
+          question: "Remets dans l'ordre les 4 phases du modèle de Masters & Johnson.",
+          items: ["Excitation", "Plateau", "Orgasme", "Résolution"],
+          explication: "Modèle de Masters & Johnson (1966) : excitation → plateau → orgasme → résolution."
         }
       ]
     },
@@ -3245,6 +3345,22 @@ const QUIZ_DATA = {
           question: "Quel est le terme pour le trouble spécifique de l'apprentissage de la LECTURE ?",
           reponse: "dyslexie", accepts: ["dyslexie"],
           explication: "Dyslexie (lecture), dyscalculie (calcul), dysorthographie (expression écrite)."
+        },
+        {
+          id: "c12-x1", notion: "Trouble spécifique des apprentissages", type: "match",
+          question: "Associe chaque trouble spécifique des apprentissages à son domaine.",
+          pairs: [
+            { l: "Dyslexie", r: "Lecture" },
+            { l: "Dyscalculie", r: "Calcul" },
+            { l: "Dysorthographie", r: "Expression écrite" }
+          ],
+          explication: "Dyslexie = lecture ; dyscalculie = calcul ; dysorthographie = expression écrite."
+        },
+        {
+          id: "c12-o1", notion: "Handicap intellectuel", type: "ordre",
+          question: "Classe les niveaux de handicap intellectuel du plus FRÉQUENT au moins fréquent.",
+          items: ["Léger (≈ 85 %)", "Moyen (≈ 10 %)", "Grave (3-4 %)", "Profond (1-2 %)"],
+          explication: "Parmi les QI < 70 : léger 85 % · moyen 10 % · grave 3-4 % · profond 1-2 %."
         }
       ]
     }

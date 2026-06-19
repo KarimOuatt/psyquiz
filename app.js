@@ -40,11 +40,11 @@
       if (raw) {
         var p = JSON.parse(raw);
         if (p && typeof p === "object") {
-          return { q: p.q || {}, chap: p.chap || {}, exam: p.exam || {}, game: p.game || { best: 0, plays: 0 } };
+          return { q: p.q || {}, chap: p.chap || {}, exam: p.exam || {}, game: p.game || { best: 0, plays: 0 }, sched: p.sched || {} };
         }
       }
     } catch (e) { /* indisponible */ }
-    return { q: {}, chap: {}, exam: {}, game: { best: 0, plays: 0 } };
+    return { q: {}, chap: {}, exam: {}, game: { best: 0, plays: 0 }, sched: {} };
   }
   function saveStats() { try { localStorage.setItem(STORE_KEY, JSON.stringify(stats)); } catch (e) { /* */ } }
 
@@ -65,11 +65,26 @@
   function hasHistory() { return allQuestions().some(function (q) { return qAttempts(q.id) > 0; }); }
   function isSingle(q) { return q.type === "qcm" || q.type === "vf" || q.type === "cas"; }
 
+  // Planification de la révision espacée (boîtes de Leitner simplifiées)
+  var DAY = 86400000, SCHED_DAYS = [0, 1, 3, 7, 16, 35];
+  function schedOf(qid) { return stats.sched[qid] || { box: 0, due: 0 }; }
+  function isDue(qid) { return schedOf(qid).due <= Date.now(); }
+  function updateSched(qid, rating) {
+    var box = schedOf(qid).box || 0;
+    if (rating === "ok") box = Math.min(SCHED_DAYS.length - 1, box + 1);
+    else if (rating === "mid") box = Math.max(1, box);
+    else box = 0;
+    stats.sched[qid] = { box: box, due: Date.now() + SCHED_DAYS[box] * DAY }; saveStats();
+  }
+  function dueQuestions() { return allQuestions().filter(function (q) { return isDue(q.id); }); }
+
   function typeLabel(t) {
     if (t === "cas") return { txt: "🩺 Cas clinique", cls: "cas" };
     if (t === "vf") return { txt: "Vrai / Faux", cls: "vf" };
     if (t === "multi") return { txt: "☑️ Plusieurs réponses", cls: "multi" };
     if (t === "saisie") return { txt: "⌨️ Réponse à écrire", cls: "saisie" };
+    if (t === "match") return { txt: "🔗 Associations", cls: "multi" };
+    if (t === "ordre") return { txt: "🔢 Remettre en ordre", cls: "saisie" };
     return null;
   }
 
@@ -94,17 +109,29 @@
       var acc = (q.accepts || []).concat([q.reponse]).map(saisieNorm);
       return acc.indexOf(n) >= 0;
     }
+    if (q.type === "match") {
+      if (!Array.isArray(answer)) return false;
+      return q.pairs.every(function (p, i) { return answer[i] === p.r; });
+    }
+    if (q.type === "ordre") {
+      if (!Array.isArray(answer) || answer.length !== q.items.length) return false;
+      return answer.every(function (ci, k) { return ci === k; });
+    }
     return answer === q.reponse;
   }
   function answerText(q, answer) {
     if (answer === null || answer === undefined) return "(non répondu)";
     if (q.type === "multi") return answer.length ? answer.map(function (i) { return q.options[i]; }).join(" · ") : "(aucune sélection)";
     if (q.type === "saisie") return String(answer).trim() || "(vide)";
+    if (q.type === "match") return q.pairs.map(function (p, i) { return p.l + " → " + (answer[i] || "?"); }).join(" · ");
+    if (q.type === "ordre") return answer.length ? answer.map(function (ci) { return q.items[ci]; }).join(" → ") : "(aucun ordre)";
     return q.options[answer];
   }
   function correctText(q) {
     if (q.type === "multi") return q.reponses.map(function (i) { return q.options[i]; }).join(" · ");
     if (q.type === "saisie") return q.reponse;
+    if (q.type === "match") return q.pairs.map(function (p) { return p.l + " → " + p.r; }).join(" · ");
+    if (q.type === "ordre") return q.items.join(" → ");
     return q.options[q.reponse];
   }
 
@@ -139,6 +166,8 @@
       : "🎓 Mode entraînement : apprendre et réviser en douceur, avec correction immédiate.";
     var examPool = allQuestions().length;
     $("exam-desc").textContent = Math.min(EXAM_SIZE, examPool) + " questions chronométrées, tous les chapitres — " + (hard ? "version difficile" : "comme le jour J");
+    var due = dueQuestions().length;
+    var sc = $("spaced-count"); if (sc) sc.textContent = due > 0 ? due + " carte" + (due > 1 ? "s" : "") + " à revoir aujourd'hui" : "Tout est à jour ✓ — reviens demain";
 
     var grid = $("chapter-grid"); grid.innerHTML = "";
     QUIZ_DATA.chapters.forEach(function (ch) {
@@ -259,8 +288,11 @@
   // ---------- déroulement ----------
   function renderQuestion() {
     var q = session.questions[session.idx];
-    session.current = q; session.validated = false;
-    session.pending = isSingle(q) ? null : (q.type === "multi" ? [] : "");
+    session.current = q; session.validated = false; session.matchSel = null;
+    if (isSingle(q)) session.pending = null;
+    else if (q.type === "saisie") session.pending = "";
+    else if (q.type === "match") session.pending = q.pairs.map(function () { return null; });
+    else session.pending = []; // multi, ordre
 
     $("quiz-title").textContent = session.title;
     $("quiz-counter").textContent = (session.idx + 1) + " / " + session.questions.length;
@@ -274,7 +306,12 @@
     $("question-text").textContent = q.question;
     $("feedback").classList.add("hidden");
     $("btn-next").classList.add("hidden");
-    $("multi-hint").classList.toggle("hidden", q.type !== "multi");
+
+    var hint = $("multi-hint");
+    if (q.type === "multi") { hint.innerHTML = "Sélectionne <strong>toutes</strong> les bonnes réponses, puis valide."; hint.classList.remove("hidden"); }
+    else if (q.type === "match") { hint.innerHTML = "Touche un terme à gauche, puis sa correspondance à droite."; hint.classList.remove("hidden"); }
+    else if (q.type === "ordre") { hint.innerHTML = "Touche les éléments dans le <strong>bon ordre</strong>."; hint.classList.remove("hidden"); }
+    else hint.classList.add("hidden");
 
     var optBox = $("options"), saisieWrap = $("saisie-wrap"), input = $("saisie-input");
     if (q.type === "saisie") {
@@ -284,9 +321,10 @@
       showPrimary("Valider ✓");
       setTimeout(function () { try { input.focus(); } catch (e) {} }, 60);
     } else {
-      saisieWrap.classList.add("hidden"); optBox.classList.remove("hidden");
-      buildOptions(q, optBox);
-      if (q.type === "multi") showPrimary("Valider ✓");
+      saisieWrap.classList.add("hidden"); optBox.classList.remove("hidden"); optBox.className = "options";
+      if (q.type === "match") { buildMatch(q, optBox); showPrimary("Valider ✓"); }
+      else if (q.type === "ordre") { buildOrdre(q, optBox); showPrimary("Valider ✓"); }
+      else { buildOptions(q, optBox); if (q.type === "multi") showPrimary("Valider ✓"); }
     }
     var card = $("question-card"); card.style.animation = "none"; void card.offsetWidth; card.style.animation = "";
   }
@@ -303,6 +341,87 @@
       box.appendChild(btn);
     });
   }
+
+  // --- format association (match) ---
+  function buildMatch(q, box) {
+    box.className = "options match-grid";
+    box.innerHTML = '<div class="match-col" id="match-left"></div><div class="match-col" id="match-right"></div>';
+    var left = $("match-left"), right = $("match-right");
+    q.pairs.forEach(function (p, i) {
+      var b = document.createElement("button");
+      b.className = "match-item"; b.dataset.li = i; b.setAttribute("data-num", "");
+      b.textContent = p.l;
+      b.addEventListener("click", function () { session.matchSel = i; renderMatchState(box); });
+      left.appendChild(b);
+    });
+    shuffle(q.pairs.map(function (p) { return p.r; })).forEach(function (txt) {
+      var b = document.createElement("button");
+      b.className = "match-item right"; b.dataset.r = txt; b.setAttribute("data-num", "");
+      b.textContent = txt;
+      b.addEventListener("click", function () { assignRight(txt, box); });
+      right.appendChild(b);
+    });
+  }
+  function assignRight(txt, box) {
+    if (session.matchSel === null || session.matchSel === undefined) return;
+    var i = session.matchSel;
+    for (var k = 0; k < session.pending.length; k++) if (session.pending[k] === txt) session.pending[k] = null;
+    session.pending[i] = txt; session.matchSel = null;
+    renderMatchState(box);
+  }
+  function setPair(btn, num, sel) {
+    btn.classList.remove("paired", "pair-1", "pair-2", "pair-3", "pair-4", "sel");
+    if (num) { btn.classList.add("paired", "pair-" + num); btn.setAttribute("data-num", num); } else btn.setAttribute("data-num", "");
+    if (sel) btn.classList.add("sel");
+  }
+  function renderMatchState(box) {
+    box.querySelectorAll("#match-left .match-item").forEach(function (b) {
+      var i = parseInt(b.dataset.li, 10);
+      setPair(b, session.pending[i] ? i + 1 : 0, session.matchSel === i);
+    });
+    box.querySelectorAll("#match-right .match-item").forEach(function (b) {
+      var leftIdx = -1; for (var k = 0; k < session.pending.length; k++) if (session.pending[k] === b.dataset.r) leftIdx = k;
+      setPair(b, leftIdx >= 0 ? leftIdx + 1 : 0, false);
+    });
+  }
+  function revealMatch(q, box) {
+    box.querySelectorAll(".match-item").forEach(function (b) { b.disabled = true; });
+    box.querySelectorAll("#match-left .match-item").forEach(function (b) {
+      var i = parseInt(b.dataset.li, 10);
+      b.classList.add(session.pending[i] === q.pairs[i].r ? "correct" : "wrong");
+    });
+  }
+
+  // --- format remise en ordre (ordre) ---
+  function buildOrdre(q, box) {
+    box.className = "options ordre-list";
+    box.innerHTML = "";
+    shuffle(q.items.map(function (_, i) { return i; })).forEach(function (ci) {
+      var b = document.createElement("button");
+      b.className = "ordre-item"; b.dataset.ci = ci; b.setAttribute("data-num", "");
+      b.textContent = q.items[ci];
+      b.addEventListener("click", function () { ordreToggle(ci, box); });
+      box.appendChild(b);
+    });
+  }
+  function ordreToggle(ci, box) {
+    var pos = session.pending.indexOf(ci);
+    if (pos >= 0) session.pending.splice(pos, 1); else session.pending.push(ci);
+    renderOrdreState(box);
+  }
+  function renderOrdreState(box) {
+    box.querySelectorAll(".ordre-item").forEach(function (b) {
+      var pos = session.pending.indexOf(parseInt(b.dataset.ci, 10));
+      if (pos >= 0) { b.classList.add("chosen"); b.setAttribute("data-num", pos + 1); } else { b.classList.remove("chosen"); b.setAttribute("data-num", ""); }
+    });
+  }
+  function revealOrdre(q, box) {
+    box.querySelectorAll(".ordre-item").forEach(function (b) {
+      b.disabled = true; var ci = parseInt(b.dataset.ci, 10), pos = session.pending.indexOf(ci);
+      b.classList.add(pos === ci ? "correct" : "wrong");
+    });
+  }
+
   function showPrimary(label) { var b = $("btn-next"); b.textContent = label; b.classList.remove("hidden"); }
   function nextLabel() {
     var last = session.idx + 1 >= session.questions.length;
@@ -333,22 +452,30 @@
     $("quiz-progress").style.width = ((session.idx + 1) / session.questions.length * 100) + "%";
     showFeedback(ok, q); showPrimary(nextLabel());
   }
-  function revealMultiSaisie(q, answer, ok) {
+  function getAnswer(q) {
+    if (q.type === "saisie") return $("saisie-input").value;
+    return Array.isArray(session.pending) ? session.pending.slice() : session.pending;
+  }
+  function revealAnswer(q, ok) {
+    var box = $("options");
     if (q.type === "multi") {
-      $("options").querySelectorAll(".option-btn").forEach(function (b) {
+      box.querySelectorAll(".option-btn").forEach(function (b) {
         b.disabled = true; var i = parseInt(b.dataset.idx, 10);
         var isCorrect = q.reponses.indexOf(i) >= 0, isSel = b.classList.contains("selected");
         if (isCorrect && isSel) b.classList.add("correct");
         else if (isCorrect && !isSel) b.classList.add("missed");
         else if (!isCorrect && isSel) b.classList.add("wrong");
       });
-    } else { var input = $("saisie-input"); input.disabled = true; input.classList.add(ok ? "correct" : "wrong"); }
+    } else if (q.type === "match") revealMatch(q, box);
+    else if (q.type === "ordre") revealOrdre(q, box);
+    else { var input = $("saisie-input"); input.disabled = true; input.classList.add(ok ? "correct" : "wrong"); }
   }
   function showFeedback(ok, q) {
     var fb = $("feedback"); fb.classList.remove("hidden", "ok", "ko"); fb.classList.add(ok ? "ok" : "ko");
     var msgs = ok ? MSG_OK : MSG_KO, msg = msgs[Math.floor(Math.random() * msgs.length)];
     if (ok && !session.exam && session.streak >= 3) msg += "  (série de " + session.streak + " ! 🔥)";
-    $("feedback-msg").textContent = msg; $("feedback-expl").textContent = q.explication;
+    $("feedback-msg").textContent = msg;
+    $("feedback-expl").textContent = (!isSingle(q) && !ok ? "Réponse : " + correctText(q) + ". " : "") + q.explication;
   }
   function record(q, answer) {
     var ok = gradeAnswer(q, answer);
@@ -364,10 +491,10 @@
     var q = session.current;
     if (isSingle(q)) { if (session.exam) record(q, session.pending); advance(); return; }
     if (!session.validated) {
-      var answer = q.type === "multi" ? session.pending.slice() : $("saisie-input").value;
+      var answer = getAnswer(q);
       if (session.exam) { record(q, answer); advance(); return; }
       var ok = record(q, answer);
-      revealMultiSaisie(q, answer, ok); updateChips(); showFeedback(ok, q);
+      revealAnswer(q, ok); updateChips(); showFeedback(ok, q);
       $("quiz-progress").style.width = ((session.idx + 1) / session.questions.length * 100) + "%";
       session.validated = true; showPrimary(nextLabel());
     } else advance();
@@ -471,9 +598,15 @@
     var seen = shuffle(pool.filter(function (q) { return qAttempts(q.id) > 0; })).sort(function (a, b) { return qRate(a.id) - qRate(b.id); });
     return unseen.concat(seen).slice(0, Math.min(FLASH_SIZE, pool.length));
   }
-  function startFlash() {
-    var qs = pickFlashQuestions(); if (!qs.length) return;
-    flash = { questions: qs, idx: 0, ok: 0, ko: 0, current: null };
+  function pickSpacedQuestions() {
+    var due = dueQuestions().sort(function (a, b) { return schedOf(a.id).due - schedOf(b.id).due; });
+    return shuffle(due.slice(0, FLASH_SIZE));
+  }
+  function startFlash() { launchFlash(pickFlashQuestions(), "normal"); }
+  function startSpaced() { launchFlash(pickSpacedQuestions(), "spaced"); }
+  function launchFlash(qs, mode) {
+    if (!qs.length) return;
+    flash = { questions: qs, idx: 0, ok: 0, ko: 0, current: null, mode: mode };
     $("flash-stage").classList.remove("hidden"); $("flash-over").classList.add("hidden");
     show("view-flash"); renderFlash();
   }
@@ -500,13 +633,15 @@
     var q = flash.current, ok = r === "ok";
     if (!stats.q[q.id]) stats.q[q.id] = { ok: 0, ko: 0 };
     if (ok) { stats.q[q.id].ok++; flash.ok++; } else { stats.q[q.id].ko++; flash.ko++; }
+    if (flash.mode === "spaced") updateSched(q.id, r);
     saveStats();
     flash.idx++;
     if (flash.idx < flash.questions.length) renderFlash(); else flashEnd();
   }
   function flashEnd() {
     $("flash-stage").classList.add("hidden"); $("flash-over").classList.remove("hidden"); $("flash-progress").style.width = "100%";
-    $("flash-over-text").innerHTML = "Tu as marqué <strong>" + flash.ok + "</strong> carte" + (flash.ok > 1 ? "s" : "") + " comme sue" + (flash.ok > 1 ? "s" : "") + " et <strong>" + flash.ko + "</strong> à revoir. " + (flash.ko === 0 ? "Parfait ! 🎉" : "Reviens-y bientôt pour ancrer la mémoire. 💪");
+    var base = "Tu as marqué <strong>" + flash.ok + "</strong> carte" + (flash.ok > 1 ? "s" : "") + " comme sue" + (flash.ok > 1 ? "s" : "") + " et <strong>" + flash.ko + "</strong> à revoir. ";
+    $("flash-over-text").innerHTML = base + (flash.mode === "spaced" ? "Chaque carte reviendra au bon moment selon ta mémoire. 🧠" : (flash.ko === 0 ? "Parfait ! 🎉" : "Reviens-y bientôt pour ancrer la mémoire. 💪"));
   }
   function quitFlash() { flash = null; renderHome(); show("view-home"); }
 
@@ -607,6 +742,7 @@
   $("btn-revision").addEventListener("click", startRevisionSession);
   $("btn-mixte").addEventListener("click", startMixteSession);
   $("btn-flash").addEventListener("click", startFlash);
+  $("btn-spaced").addEventListener("click", startSpaced);
   $("btn-game").addEventListener("click", startGame);
   $("btn-next").addEventListener("click", onPrimary);
 
@@ -636,7 +772,7 @@
   $("game-home").addEventListener("click", quitGame);
 
   $("btn-reset").addEventListener("click", function () {
-    if (window.confirm("Effacer toutes tes statistiques (scores, notions, progression) ?")) { stats = { q: {}, chap: {}, exam: {}, game: { best: 0, plays: 0 } }; saveStats(); renderHome(); }
+    if (window.confirm("Effacer toutes tes statistiques (scores, notions, progression) ?")) { stats = { q: {}, chap: {}, exam: {}, game: { best: 0, plays: 0 }, sched: {} }; saveStats(); renderHome(); }
   });
 
   function keyIndex(e) { if (e.key >= "1" && e.key <= "4") return parseInt(e.key, 10) - 1; var k = e.key.toUpperCase(); return KEYS.indexOf(k); }

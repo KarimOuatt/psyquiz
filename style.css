@@ -362,6 +362,50 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -.01em
 .type-tag.multi { background: #eef0fe; border-color: #d3d8fb; color: #4f46e5; }
 .type-tag.saisie { background: #eafaf2; border-color: #bfe8d6; color: #0c9b6a; }
 
+/* ====== Format : association (match) ====== */
+.options.match-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.match-col { display: flex; flex-direction: column; gap: 8px; }
+.match-item {
+  position: relative; text-align: left; padding: 12px 32px 12px 14px;
+  border: 1.5px solid var(--line-strong); border-radius: var(--radius-sm); background: #fafbfd;
+  font-family: inherit; font-size: .9rem; color: var(--ink); line-height: 1.35; cursor: pointer;
+  transition: border-color .14s ease, background .14s ease;
+}
+.match-item:hover:not(:disabled) { border-color: var(--primary); }
+.match-item.sel { border-color: var(--primary); background: var(--primary-soft); box-shadow: 0 0 0 2px var(--primary-soft); }
+.match-item.paired { font-weight: 600; }
+.match-item:not([data-num=""])::after {
+  content: attr(data-num); position: absolute; top: 8px; right: 8px; width: 18px; height: 18px;
+  border-radius: 50%; font-size: .7rem; font-weight: 800; display: grid; place-items: center; color: #fff; background: var(--muted);
+}
+.match-item.pair-1 { border-color: #4f46e5; background: #eef0fe; } .match-item.pair-1::after { background: #4f46e5; }
+.match-item.pair-2 { border-color: #0c9b6a; background: #e8f7f0; } .match-item.pair-2::after { background: #0c9b6a; }
+.match-item.pair-3 { border-color: #c9820a; background: #fdf4e3; } .match-item.pair-3::after { background: #c9820a; }
+.match-item.pair-4 { border-color: #c44d9b; background: #fbeef6; } .match-item.pair-4::after { background: #c44d9b; }
+.match-item.correct { border-color: var(--green) !important; background: var(--green-bg) !important; }
+.match-item.wrong { border-color: var(--red) !important; background: var(--red-bg) !important; }
+
+/* ====== Format : remise en ordre (ordre) ====== */
+.options.ordre-list { display: flex; flex-direction: column; gap: 9px; }
+.ordre-item {
+  position: relative; text-align: left; padding: 14px 16px 14px 52px;
+  border: 1.5px solid var(--line-strong); border-radius: var(--radius-sm); background: #fafbfd;
+  font-family: inherit; font-size: 1rem; color: var(--ink); cursor: pointer;
+  transition: border-color .14s ease, background .14s ease;
+}
+.ordre-item:hover:not(:disabled) { border-color: var(--primary); }
+.ordre-item::before {
+  content: attr(data-num); position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+  width: 26px; height: 26px; border-radius: 8px; background: #eceef4; color: var(--muted);
+  display: grid; place-items: center; font-weight: 800; font-size: .82rem;
+}
+.ordre-item.chosen { border-color: var(--primary); background: var(--primary-soft); }
+.ordre-item.chosen::before { background: var(--primary); color: #fff; }
+.ordre-item.correct { border-color: var(--green); background: var(--green-bg); }
+.ordre-item.correct::before { background: var(--green); color: #fff; }
+.ordre-item.wrong { border-color: var(--red); background: var(--red-bg); }
+.ordre-item.wrong::before { background: var(--red); color: #fff; }
+
 /* ====== Flashcards (Mémo) ====== */
 .flash-stage { display: flex; flex-direction: column; align-items: center; gap: 18px; }
 .flashcard {

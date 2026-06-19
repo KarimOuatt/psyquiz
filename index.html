@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="PsyQuiz">
 
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -35,13 +35,24 @@
   <p class="level-hint" id="level-hint"></p>
 
   <section class="mode-section">
-    <h2 class="section-title"><span class="st-emoji">🧠</span> Apprendre &amp; s'entraîner</h2>
-    <div class="modes modes-3">
+    <h2 class="section-title"><span class="st-emoji">🧠</span> Apprendre</h2>
+    <div class="modes modes-2">
       <button id="btn-flash" class="mode-btn">
         <span class="mode-tile">🎴</span>
         <span class="mode-label">Mémo</span>
         <span class="mode-desc">Flashcards : retourne la carte et auto-évalue-toi (rappel actif)</span>
       </button>
+      <button id="btn-spaced" class="mode-btn">
+        <span class="mode-tile">🧠</span>
+        <span class="mode-label">Révision espacée</span>
+        <span class="mode-desc" id="spaced-count">Cartes planifiées selon ta mémoire</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="mode-section">
+    <h2 class="section-title"><span class="st-emoji">🎯</span> S'entraîner</h2>
+    <div class="modes modes-2">
       <button id="btn-mixte" class="mode-btn">
         <span class="mode-tile">🔀</span>
         <span class="mode-label">Quiz mixte</span>
@@ -251,7 +262,7 @@
   </section>
 </main>
 
-<script src="data.js?v=8"></script>
-<script src="app.js?v=8"></script>
+<script src="data.js?v=10"></script>
+<script src="app.js?v=10"></script>
 </body>
 </html>
