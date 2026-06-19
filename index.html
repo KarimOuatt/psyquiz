@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="PsyQuiz">
 
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
   <header class="hero">
     <span class="kicker">Psychopathologie · PSY2115T</span>
     <h1>PsyQuiz <span class="brain">🧠</span></h1>
-    <p class="subtitle">Révise par chapitre, suis ta progression et entraîne-toi pour l'examen final.</p>
+    <p class="subtitle">Apprends activement, joue, et entraîne-toi pour l'examen final.</p>
   </header>
 
   <div class="level-switch" id="level-switch" role="tablist" aria-label="Niveau de difficulté">
@@ -34,23 +34,43 @@
   </div>
   <p class="level-hint" id="level-hint"></p>
 
-  <section class="modes">
-    <button id="btn-exam" class="mode-btn primary">
-      <span class="mode-flag">Examen</span>
-      <span class="mode-tile">📝</span>
-      <span class="mode-label">Examen blanc</span>
-      <span class="mode-desc" id="exam-desc">50 questions chronométrées, tous les chapitres — comme le jour J</span>
-    </button>
-    <button id="btn-revision" class="mode-btn" disabled>
-      <span class="mode-tile">🎯</span>
-      <span class="mode-label">Révision ciblée</span>
-      <span class="mode-desc">Tes notions les plus fragiles en priorité</span>
-    </button>
-    <button id="btn-mixte" class="mode-btn">
-      <span class="mode-tile">🔀</span>
-      <span class="mode-label">Quiz mixte</span>
-      <span class="mode-desc">20 questions au hasard, avec correction immédiate</span>
-    </button>
+  <section class="mode-section">
+    <h2 class="section-title"><span class="st-emoji">🧠</span> Apprendre &amp; s'entraîner</h2>
+    <div class="modes modes-3">
+      <button id="btn-flash" class="mode-btn">
+        <span class="mode-tile">🎴</span>
+        <span class="mode-label">Mémo</span>
+        <span class="mode-desc">Flashcards : retourne la carte et auto-évalue-toi (rappel actif)</span>
+      </button>
+      <button id="btn-mixte" class="mode-btn">
+        <span class="mode-tile">🔀</span>
+        <span class="mode-label">Quiz mixte</span>
+        <span class="mode-desc">20 questions variées, correction immédiate</span>
+      </button>
+      <button id="btn-revision" class="mode-btn" disabled>
+        <span class="mode-tile">🎯</span>
+        <span class="mode-label">Révision ciblée</span>
+        <span class="mode-desc">Tes notions les plus fragiles en priorité</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="mode-section">
+    <h2 class="section-title"><span class="st-emoji">🏆</span> Se tester &amp; jouer</h2>
+    <div class="modes modes-2">
+      <button id="btn-exam" class="mode-btn primary">
+        <span class="mode-flag">Examen</span>
+        <span class="mode-tile">📝</span>
+        <span class="mode-label">Examen blanc</span>
+        <span class="mode-desc" id="exam-desc">50 questions chronométrées, tous les chapitres — comme le jour J</span>
+      </button>
+      <button id="btn-game" class="mode-btn game">
+        <span class="mode-flag">Jeu</span>
+        <span class="mode-tile">⚡</span>
+        <span class="mode-label">Défi Éclair</span>
+        <span class="mode-desc">Arcade chronométré : vies, combos et score. Rapide et fun !</span>
+      </button>
+    </div>
   </section>
 
   <h2 class="section-title"><span class="st-emoji">📚</span> Chapitres</h2>
@@ -92,12 +112,98 @@
       <span class="type-tag hidden" id="type-tag"></span>
     </div>
     <h2 id="question-text" class="question-text"></h2>
+    <p id="multi-hint" class="multi-hint hidden">Sélectionne <strong>toutes</strong> les bonnes réponses, puis valide.</p>
     <div id="options" class="options"></div>
+    <div id="saisie-wrap" class="saisie-wrap hidden">
+      <input id="saisie-input" class="saisie-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Tape ta réponse…">
+    </div>
     <div id="feedback" class="feedback hidden">
       <p id="feedback-msg" class="feedback-msg"></p>
       <p id="feedback-expl" class="feedback-expl"></p>
     </div>
     <button id="btn-next" class="primary-btn hidden">Question suivante →</button>
+  </section>
+</main>
+
+<!-- ======== FLASHCARDS (MÉMO) ======== -->
+<main id="view-flash" class="view hidden">
+  <header class="quiz-header">
+    <button id="flash-quit" class="icon-btn" title="Quitter">✕</button>
+    <div class="quiz-progress-wrap">
+      <div class="quiz-title-row">
+        <span class="quiz-title">🎴 Mémo</span>
+        <span id="flash-counter" class="quiz-counter"></span>
+      </div>
+      <div class="progress-track"><div id="flash-progress" class="progress-fill"></div></div>
+    </div>
+  </header>
+
+  <section id="flash-stage" class="flash-stage">
+    <div id="flashcard" class="flashcard">
+      <div class="flash-face flash-front">
+        <span class="flash-tag" id="flash-tag"></span>
+        <p id="flash-front-text" class="flash-q"></p>
+        <span class="flash-hint">Touche la carte pour la retourner</span>
+      </div>
+      <div class="flash-face flash-back">
+        <span class="flash-label">Réponse</span>
+        <p id="flash-answer" class="flash-a"></p>
+        <p id="flash-expl" class="flash-expl"></p>
+      </div>
+    </div>
+    <button id="btn-flip" class="primary-btn">Retourner la carte ↻</button>
+    <div id="flash-rate" class="flash-rate hidden">
+      <p class="flash-rate-q">Tu connaissais la réponse ?</p>
+      <div class="flash-rate-btns">
+        <button class="rate-btn rate-ko" data-rate="ko">😕 À revoir</button>
+        <button class="rate-btn rate-mid" data-rate="mid">🤔 Presque</button>
+        <button class="rate-btn rate-ok" data-rate="ok">😎 Je savais</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="flash-over" class="flash-over hidden">
+    <div class="results-card">
+      <h1 class="results-title">🎴 Série terminée</h1>
+      <p id="flash-over-text" class="flash-over-text"></p>
+      <div class="results-actions">
+        <button id="flash-replay" class="primary-btn">🔁 Nouvelle série</button>
+        <button id="flash-home" class="secondary-btn">🏠 Accueil</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======== DÉFI ÉCLAIR (JEU) ======== -->
+<main id="view-game" class="view hidden">
+  <div id="game-play">
+    <div class="game-hud">
+      <button id="game-quit" class="icon-btn" title="Quitter">✕</button>
+      <div class="game-stat"><span class="gs-label">Score</span><span id="game-score" class="gs-val">0</span></div>
+      <div class="game-stat"><span class="gs-label">Combo</span><span id="game-combo" class="gs-val combo">×1</span></div>
+      <div class="game-lives" id="game-lives"></div>
+    </div>
+    <div class="game-timerbar"><div id="game-timerfill" class="game-timerfill"></div></div>
+
+    <section class="game-card" id="game-card">
+      <span class="notion-tag" id="game-notion"></span>
+      <h2 id="game-question" class="question-text"></h2>
+      <div id="game-options" class="options"></div>
+    </section>
+    <div id="game-popup" class="game-popup"></div>
+  </div>
+
+  <section id="game-over" class="game-over hidden">
+    <div class="results-card">
+      <h1 id="game-over-title" class="results-title"></h1>
+      <div class="game-final"><span id="game-final-score" class="game-final-score">0</span><span class="gf-label">points</span></div>
+      <p id="game-best" class="game-best"></p>
+      <p id="game-recap" class="game-recap"></p>
+      <div class="results-actions">
+        <button id="game-replay" class="primary-btn">⚡ Rejouer</button>
+        <button id="game-home" class="secondary-btn">🏠 Accueil</button>
+      </div>
+    </div>
   </section>
 </main>
 
@@ -145,7 +251,7 @@
   </section>
 </main>
 
-<script src="data.js?v=6"></script>
-<script src="app.js?v=6"></script>
+<script src="data.js?v=8"></script>
+<script src="app.js?v=8"></script>
 </body>
 </html>

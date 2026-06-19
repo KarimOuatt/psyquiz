@@ -456,6 +456,19 @@ const QUIZ_DATA = {
           options: ["½ rémission complète, ¼ rémission partielle, ¼ absence de rémission", "⅓ – ⅓ – ⅓", "¾ rémission complète", "10 % de rémission complète"],
           reponse: 0,
           explication: "Avec traitement : ½ rémission complète, ¼ partielle, ¼ absence. Sans traitement et avec symptômes sévères, environ 10 % meurent."
+        },
+        {
+          id: "c7-m1", notion: "Boulimie — critères DSM", type: "multi",
+          question: "Parmi ces comportements, lesquels sont des comportements compensatoires dans la boulimie ?",
+          options: ["Vomissements provoqués", "Emploi abusif de laxatifs", "Jeûne ou exercice physique excessif", "Idéation suicidaire"],
+          reponses: [0, 1, 2],
+          explication: "Comportements compensatoires : vomissements, laxatifs/diurétiques, jeûne, exercice excessif. L'idéation suicidaire n'en fait pas partie."
+        },
+        {
+          id: "c7-s1", notion: "Anorexie — caractéristiques", type: "saisie",
+          question: "Comment nomme-t-on le fin duvet corporel qui apparaît dans l'anorexie sévère ?",
+          reponse: "lanugo", accepts: ["lanugo"],
+          explication: "Le lanugo est un fin duvet qui apparaît avec la dénutrition de l'anorexie."
         }
       ]
     },
@@ -900,6 +913,19 @@ const QUIZ_DATA = {
           options: ["Rispéridone et olanzapine = 2e génération (atypiques) ; halopéridol et chlorpromazine = 1re génération (typiques)", "Halopéridol = 2e génération", "Clozapine = 1re génération sans surveillance", "Quétiapine = 1re génération"],
           reponse: 0,
           explication: "2e génération (atypiques, effets secondaires plus favorables) : rispéridone, olanzapine, aripiprazole, quétiapine. 1re génération (typiques) : halopéridol, chlorpromazine. La clozapine, la plus efficace pour les cas complexes, exige une surveillance sanguine stricte."
+        },
+        {
+          id: "c8-m1", notion: "Symptômes positifs", type: "multi",
+          question: "Lesquels sont des symptômes POSITIFS de la schizophrénie ?",
+          options: ["Idées délirantes", "Hallucinations", "Discours désorganisé", "Émoussement affectif"],
+          reponses: [0, 1, 2],
+          explication: "Positifs : idées délirantes, hallucinations, discours désorganisé, comportement désorganisé/catatonique. L'émoussement affectif est un symptôme négatif."
+        },
+        {
+          id: "c8-s1", notion: "Catatonie & comportement désorganisé", type: "saisie",
+          question: "Comment appelle-t-on la répétition automatique des paroles d'autrui (catatonie) ?",
+          reponse: "écholalie", accepts: ["echolalie"],
+          explication: "Écholalie = répéter les paroles ; échopraxie = répéter les gestes."
         }
       ]
     },
@@ -1310,6 +1336,19 @@ const QUIZ_DATA = {
           options: ["La dissociation pendant l'événement et sa persistance ensuite", "Un bon soutien social", "Un niveau d'éducation élevé", "Un événement non interpersonnel"],
           reponse: 0,
           explication: "Facteurs de risque : sévérité du trauma, perception de menace mortelle, blessures, violence interpersonnelle, dissociation péri- et post-traumatique ; chez les militaires : avoir commis des violences, tué ou été témoin d'atrocités."
+        },
+        {
+          id: "c9a-m1", notion: "Éveil & réactivité (critère E)", type: "multi",
+          question: "Lesquels relèvent du critère E (altérations de l'éveil et de la réactivité) du TSPT ?",
+          options: ["Hypervigilance", "Réaction de sursaut exagérée", "Perturbation du sommeil", "Flashbacks"],
+          reponses: [0, 1, 2],
+          explication: "Critère E : irritabilité, comportement autodestructeur, hypervigilance, sursaut, problèmes de concentration, troubles du sommeil. Les flashbacks relèvent du critère B."
+        },
+        {
+          id: "c9a-s1", notion: "Symptômes envahissants (critère B)", type: "saisie",
+          question: "Quel type de réaction dissociative fait revivre l'événement comme s'il se reproduisait ?",
+          reponse: "flashback", accepts: ["flashback", "flashbacks", "flash back"],
+          explication: "Les flashbacks sont des réactions dissociatives appartenant au critère B."
         }
       ]
     },
@@ -1737,6 +1776,19 @@ const QUIZ_DATA = {
           options: ["Léger 2-3 · Moyen 4-5 · Grave ≥ 6", "Léger 1 · Moyen 2-3 · Grave 4+", "Léger 2-4 · Moyen 5-7 · Grave 8+", "Léger 3-4 · Moyen 5-6 · Grave 7+"],
           reponse: 0,
           explication: "Léger 2-3 · moyen 4-5 · grave ≥ 6 symptômes (sur une période de 12 mois)."
+        },
+        {
+          id: "c9b-m1", notion: "Classes & organisation du DSM", type: "multi",
+          question: "Lesquelles font partie des 10 classes de substances du DSM-5-TR ?",
+          options: ["Cannabis", "Caféine", "Tabac", "Sucre"],
+          reponses: [0, 1, 2],
+          explication: "Les 10 classes incluent le cannabis, la caféine et le tabac. Le sucre n'en fait pas partie."
+        },
+        {
+          id: "c9b-s1", notion: "Trouble de l'usage — critères", type: "saisie",
+          question: "Quel terme anglais désigne l'envie impérieuse de consommer une substance ?",
+          reponse: "craving", accepts: ["craving"],
+          explication: "Le craving (envie impérieuse) appartient au groupe « réduction du contrôle »."
         }
       ]
     },
@@ -2242,6 +2294,19 @@ const QUIZ_DATA = {
           options: ["Renforcer la pensée « tout noir, tout blanc »", "Moduler les émotions et l'impulsivité", "Tolérer la détresse", "Favoriser l'intégration (synthèse)"],
           reponse: 0,
           explication: "La DBT vise au contraire à ÉVITER le « tout noir tout blanc » et à favoriser l'intégration ; elle travaille la maîtrise émotionnelle, la tolérance à la détresse et la confiance en ses propres pensées/émotions."
+        },
+        {
+          id: "c10-m1", notion: "Les 3 groupes (clusters)", type: "multi",
+          question: "Lesquels appartiennent au GROUPE B des troubles de la personnalité ?",
+          options: ["Borderline", "Narcissique", "Histrionique", "Évitante"],
+          reponses: [0, 1, 2],
+          explication: "Groupe B : borderline, histrionique, narcissique, antisociale. L'évitante appartient au groupe C."
+        },
+        {
+          id: "c10-s1", notion: "Traitement — approches", type: "saisie",
+          question: "Quel mécanisme désigne l'incapacité à former des idées nuancées (alternance idéalisation/dévalorisation) ?",
+          reponse: "clivage", accepts: ["clivage"],
+          explication: "Le clivage est notamment travaillé par la psychothérapie focalisée sur le transfert (TFP)."
         }
       ]
     },
@@ -2677,6 +2742,19 @@ const QUIZ_DATA = {
           options: ["Les excréments", "L'urine", "Les cadavres", "Les animaux"],
           reponse: 0,
           explication: "Coprophilie = excréments ; urophilie = urine ; nécrophilie = cadavres ; zoophilie = animaux ; scatologie téléphonique = appels obscènes ; cystérophilie = lavements (autres troubles paraphiliques spécifiés)."
+        },
+        {
+          id: "c11-m1", notion: "Dysfonctions sexuelles — généralités", type: "multi",
+          question: "Lesquelles sont des DYSFONCTIONS sexuelles (et non des paraphilies) ?",
+          options: ["Éjaculation prématurée", "Trouble de l'érection", "Trouble de l'orgasme chez la femme", "Voyeurisme"],
+          reponses: [0, 1, 2],
+          explication: "Dysfonctions : éjaculation prématurée/retardée, trouble de l'érection, de l'orgasme, du désir, douleurs génito-pelviennes. Le voyeurisme est un trouble paraphilique."
+        },
+        {
+          id: "c11-s1", notion: "Paraphilies — définitions", type: "saisie",
+          question: "Comment nomme-t-on un intérêt sexuel intense et persistant pour des objets ou activités inusités ?",
+          reponse: "paraphilie", accepts: ["paraphilie", "paraphilies"],
+          explication: "Une paraphilie devient un trouble paraphilique en cas de détresse/altération ou de préjudice à autrui."
         }
       ]
     },
@@ -3154,6 +3232,19 @@ const QUIZ_DATA = {
           options: ["Dyslexie = lecture, dyscalculie = calcul, dysorthographie = expression écrite ; tics = troubles moteurs", "Dyscalculie = lecture", "Dyslexie = calcul", "Les tics sont des troubles de la communication"],
           reponse: 0,
           explication: "Trouble spécifique des apprentissages : dyslexie (lecture), dyscalculie (calcul), dysorthographie (expression écrite). Les tics (dont le syndrome de Gilles de la Tourette) relèvent des troubles moteurs."
+        },
+        {
+          id: "c12-m1", notion: "Troubles neurodéveloppementaux — vue d'ensemble", type: "multi",
+          question: "Lesquels sont des troubles NEURODÉVELOPPEMENTAUX ?",
+          options: ["Trouble du spectre de l'autisme", "TDAH", "Trouble spécifique des apprentissages", "Trouble des conduites"],
+          reponses: [0, 1, 2],
+          explication: "Neurodéveloppementaux : handicap intellectuel, troubles de la communication, TSA, TDAH, apprentissages, troubles moteurs. Le trouble des conduites est un trouble disruptif."
+        },
+        {
+          id: "c12-s1", notion: "Trouble spécifique des apprentissages", type: "saisie",
+          question: "Quel est le terme pour le trouble spécifique de l'apprentissage de la LECTURE ?",
+          reponse: "dyslexie", accepts: ["dyslexie"],
+          explication: "Dyslexie (lecture), dyscalculie (calcul), dysorthographie (expression écrite)."
         }
       ]
     }
