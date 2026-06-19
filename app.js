@@ -12,9 +12,15 @@
   var SESSION_SIZE = 10;     // questions par chapitre
   var REVISION_SIZE = 12;    // révision ciblée
   var MIXTE_SIZE = 20;       // quiz mixte
-  var EXAM_SIZE = 30;        // examen blanc
+  var EXAM_SIZE = 50;        // examen blanc (l'examen réel fait 60-80 QCM ; monter ici si voulu)
   var EXAM_SEC_PER_Q = 60;   // 1 min / question
   var PASS_PCT = 60;         // seuil de réussite de l'examen
+
+  // Niveau de difficulté actif : "base" (entraînement) ou "difficile" (sérieux).
+  var currentLevel = "base";
+  function levelOf(q) { return q.niveau === "difficile" ? "difficile" : "base"; }
+  function inLevel(q) { return levelOf(q) === currentLevel; }
+  function chapterPool(ch) { return ch.questions.filter(inLevel); }
 
   var MSG_OK = ["Bravo ! 🎉", "Exact ! ✨", "Bien vu ! 👏", "Parfait ! 💪", "Tu maîtrises ! 🧠", "Excellent ! 🌟"];
   var MSG_KO = ["Pas tout à fait… 🤏", "Raté ! 😅", "Presque ! 👀", "À revoir 📖", "Oups ! 🙈"];
@@ -64,15 +70,20 @@
 
   function allQuestions() {
     var out = [];
-    QUIZ_DATA.chapters.forEach(function (ch) { ch.questions.forEach(function (q) { out.push(q); }); });
+    QUIZ_DATA.chapters.forEach(function (ch) { ch.questions.forEach(function (q) { if (inLevel(q)) out.push(q); }); });
     return out;
+  }
+  function levelCount(level) {
+    var n = 0;
+    QUIZ_DATA.chapters.forEach(function (ch) { ch.questions.forEach(function (q) { if (levelOf(q) === level) n++; }); });
+    return n;
   }
 
   function qStat(qid) { return stats.q[qid] || { ok: 0, ko: 0 }; }
   function qAttempts(qid) { var s = qStat(qid); return s.ok + s.ko; }
   function qRate(qid) { var s = qStat(qid), n = s.ok + s.ko; return n === 0 ? null : s.ok / n; }
   function rateClass(r) { return r >= 0.75 ? "good" : (r >= 0.5 ? "mid" : "bad"); }
-  function hasHistory() { return Object.keys(stats.q).some(function (k) { return qAttempts(k) > 0; }); }
+  function hasHistory() { return allQuestions().some(function (q) { return qAttempts(q.id) > 0; }); }
 
   function typeLabel(t) {
     if (t === "cas") return { txt: "🩺 Cas clinique", cls: "cas" };
@@ -112,20 +123,47 @@
 
   // ---------- accueil ----------
   function renderHome() {
+    // état du sélecteur de niveau
+    document.querySelectorAll(".level-opt").forEach(function (b) {
+      b.classList.toggle("active", b.dataset.level === currentLevel);
+    });
+    var hard = currentLevel === "difficile";
+    $("level-hint").textContent = hard
+      ? "🔥 Mode sérieux : questions pièges niveau examen (différenciation fine, seuils exacts, exceptions, « lequel est FAUX »)."
+      : "🎓 Mode entraînement : pour apprendre et réviser en douceur, avec correction immédiate.";
+    var examPool = allQuestions().length;
+    $("exam-desc").textContent = Math.min(EXAM_SIZE, examPool) + " questions chronométrées, tous les chapitres — "
+      + (hard ? "version difficile" : "comme le jour J");
+
     var grid = $("chapter-grid");
     grid.innerHTML = "";
 
     QUIZ_DATA.chapters.forEach(function (ch) {
-      var total = ch.questions.length;
-      var seen = ch.questions.filter(function (q) { return qAttempts(q.id) > 0; }).length;
-      var ok = 0, n = 0;
-      ch.questions.forEach(function (q) { var s = qStat(q.id); ok += s.ok; n += s.ok + s.ko; });
-      var mastery = n === 0 ? null : ok / n;
-      var chapStat = stats.chap[ch.id];
-
+      var pool = chapterPool(ch);
+      var total = pool.length;
       var card = document.createElement("button");
       card.className = "chapter-card";
       card.style.setProperty("--accent", ch.accent);
+
+      if (total === 0) {
+        // pas (encore) de questions à ce niveau pour ce chapitre
+        card.classList.add("empty");
+        card.disabled = true;
+        card.innerHTML =
+          '<div class="chapter-top">' +
+            '<span class="chapter-emoji">' + ch.emoji + "</span>" +
+            '<span class="chapter-name">' + ch.titre + "</span>" +
+          "</div>" +
+          '<span class="chapter-meta">Aucune question difficile pour l’instant</span>';
+        grid.appendChild(card);
+        return;
+      }
+
+      var seen = pool.filter(function (q) { return qAttempts(q.id) > 0; }).length;
+      var ok = 0, n = 0;
+      pool.forEach(function (q) { var s = qStat(q.id); ok += s.ok; n += s.ok + s.ko; });
+      var mastery = n === 0 ? null : ok / n;
+      var chapStat = stats.chap[ch.id + "-" + currentLevel];
 
       var html =
         '<div class="chapter-top">' +
@@ -175,10 +213,11 @@
 
   // ---------- construction des sessions ----------
   function pickChapterQuestions(ch) {
-    var unseen = shuffle(ch.questions.filter(function (q) { return qAttempts(q.id) === 0; }));
-    var seen = shuffle(ch.questions.filter(function (q) { return qAttempts(q.id) > 0; }))
+    var pool = chapterPool(ch);
+    var unseen = shuffle(pool.filter(function (q) { return qAttempts(q.id) === 0; }));
+    var seen = shuffle(pool.filter(function (q) { return qAttempts(q.id) > 0; }))
       .sort(function (a, b) { return qRate(a.id) - qRate(b.id); });
-    return shuffle(unseen.concat(seen).slice(0, Math.min(SESSION_SIZE, ch.questions.length)));
+    return shuffle(unseen.concat(seen).slice(0, Math.min(SESSION_SIZE, pool.length)));
   }
 
   function pickRevisionQuestions() {
@@ -193,38 +232,47 @@
     return shuffle(picked);
   }
 
-  // Examen : sélection équilibrée entre chapitres.
+  // Examen : sélection équilibrée entre chapitres (au niveau actif).
   function pickExamQuestions() {
-    var total = allQuestions().length;
+    var pool = allQuestions();
+    var total = pool.length;
+    var size = Math.min(EXAM_SIZE, total);
     var picked = [];
     QUIZ_DATA.chapters.forEach(function (ch) {
-      var n = Math.max(1, Math.round(EXAM_SIZE * ch.questions.length / total));
-      picked = picked.concat(shuffle(ch.questions).slice(0, n));
+      var chq = chapterPool(ch);
+      if (chq.length === 0) return;
+      var n = Math.max(1, Math.round(size * chq.length / total));
+      picked = picked.concat(shuffle(chq).slice(0, n));
     });
     picked = shuffle(picked);
-    if (picked.length > EXAM_SIZE) picked = picked.slice(0, EXAM_SIZE);
-    if (picked.length < EXAM_SIZE) {
-      var rest = shuffle(allQuestions().filter(function (q) { return picked.indexOf(q) === -1; }));
-      picked = picked.concat(rest.slice(0, EXAM_SIZE - picked.length));
+    if (picked.length > size) picked = picked.slice(0, size);
+    if (picked.length < size) {
+      var rest = shuffle(pool.filter(function (q) { return picked.indexOf(q) === -1; }));
+      picked = picked.concat(rest.slice(0, size - picked.length));
     }
     return picked;
   }
 
+  var LEVEL_TAG = { base: "", difficile: " 🔥" };
+
   function startChapterSession(ch) {
-    startSession({ kind: "chapter", chapterId: ch.id, chapter: ch, title: ch.emoji + " " + ch.court, questions: pickChapterQuestions(ch) });
+    if (chapterPool(ch).length === 0) return;
+    startSession({ kind: "chapter", chapterId: ch.id, chapter: ch, title: ch.emoji + " " + ch.court + LEVEL_TAG[currentLevel], questions: pickChapterQuestions(ch) });
   }
   function startRevisionSession() {
     var qs = pickRevisionQuestions();
     if (qs.length === 0) return;
-    startSession({ kind: "revision", title: "🎯 Révision ciblée", questions: qs });
+    startSession({ kind: "revision", title: "🎯 Révision ciblée" + LEVEL_TAG[currentLevel], questions: qs });
   }
   function startMixteSession() {
-    startSession({ kind: "mixte", title: "🔀 Quiz mixte", questions: shuffle(allQuestions()).slice(0, MIXTE_SIZE) });
+    startSession({ kind: "mixte", title: "🔀 Quiz mixte" + LEVEL_TAG[currentLevel], questions: shuffle(allQuestions()).slice(0, MIXTE_SIZE) });
   }
   function startExamSession() {
     var qs = pickExamQuestions();
+    if (qs.length === 0) return;
+    var label = currentLevel === "difficile" ? "📝 Examen blanc — version difficile 🔥" : "📝 Examen blanc";
     var ok = window.confirm(
-      "📝 Examen blanc\n\n" +
+      label + "\n\n" +
       "• " + qs.length + " questions, tous les chapitres\n" +
       "• " + Math.round(qs.length * EXAM_SEC_PER_Q / 60) + " minutes chronométrées\n" +
       "• Aucune correction pendant l'épreuve\n" +
@@ -232,13 +280,13 @@
       "Prêt·e à commencer ?"
     );
     if (!ok) return;
-    startSession({ kind: "exam", exam: true, title: "📝 Examen blanc", questions: qs, durationSec: qs.length * EXAM_SEC_PER_Q });
+    startSession({ kind: "exam", exam: true, title: label, questions: qs, durationSec: qs.length * EXAM_SEC_PER_Q });
   }
 
   function startSession(cfg) {
     clearTimer();
     session = {
-      kind: cfg.kind, exam: !!cfg.exam, chapterId: cfg.chapterId || null, chapter: cfg.chapter || null,
+      kind: cfg.kind, exam: !!cfg.exam, level: currentLevel, chapterId: cfg.chapterId || null, chapter: cfg.chapter || null,
       title: cfg.title, questions: cfg.questions, idx: 0, correct: 0, streak: 0, bestStreak: 0,
       results: [], current: null, pending: null,
       durationSec: cfg.durationSec || 0, remaining: cfg.durationSec || 0, timerId: null, startTime: Date.now()
@@ -434,12 +482,15 @@
     var total = session.questions.length;
     var pct = Math.round((session.correct / total) * 100);
 
-    // sauvegarde meilleur score
+    // sauvegarde meilleur score (par chapitre ET par niveau)
     if (session.kind === "chapter" && session.chapterId) {
-      var c = stats.chap[session.chapterId] || { best: 0, plays: 0 };
-      c.plays++; if (pct > c.best) c.best = pct; stats.chap[session.chapterId] = c; saveStats();
+      var key = session.chapterId + "-" + session.level;
+      var c = stats.chap[key] || { best: 0, plays: 0 };
+      c.plays++; if (pct > c.best) c.best = pct; stats.chap[key] = c; saveStats();
     } else if (session.exam) {
-      stats.exam.plays++; if (pct > stats.exam.best) stats.exam.best = pct; saveStats();
+      if (!stats.exam || typeof stats.exam.best === "number") stats.exam = {};
+      var e = stats.exam[session.level] || { best: 0, plays: 0 };
+      e.plays++; if (pct > e.best) e.best = pct; stats.exam[session.level] = e; saveStats();
     }
 
     // verdict (examen) ou titre standard
@@ -549,6 +600,15 @@
   $("btn-revision").addEventListener("click", startRevisionSession);
   $("btn-mixte").addEventListener("click", startMixteSession);
   $("btn-next").addEventListener("click", onNext);
+
+  // sélecteur de niveau (entraînement / sérieux)
+  document.querySelectorAll(".level-opt").forEach(function (b) {
+    b.addEventListener("click", function () {
+      if (currentLevel === b.dataset.level) return;
+      currentLevel = b.dataset.level;
+      renderHome();
+    });
+  });
 
   function quitToHome() { clearTimer(); session = null; renderHome(); show("view-home"); }
   $("btn-quit").addEventListener("click", function () {

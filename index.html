@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="PsyQuiz">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -28,12 +28,18 @@
     <p class="subtitle">Révise par chapitre, suis ta progression et entraîne-toi pour l'examen final.</p>
   </header>
 
+  <div class="level-switch" id="level-switch" role="tablist" aria-label="Niveau de difficulté">
+    <button class="level-opt active" data-level="base" role="tab">🎓 Entraînement</button>
+    <button class="level-opt" data-level="difficile" role="tab">🔥 Sérieux</button>
+  </div>
+  <p class="level-hint" id="level-hint"></p>
+
   <section class="modes">
     <button id="btn-exam" class="mode-btn primary">
       <span class="mode-flag">Examen</span>
       <span class="mode-tile">📝</span>
       <span class="mode-label">Examen blanc</span>
-      <span class="mode-desc">30 questions chronométrées, tous les chapitres — comme le jour J</span>
+      <span class="mode-desc" id="exam-desc">50 questions chronométrées, tous les chapitres — comme le jour J</span>
     </button>
     <button id="btn-revision" class="mode-btn" disabled>
       <span class="mode-tile">🎯</span>
@@ -139,7 +145,7 @@
   </section>
 </main>
 
-<script src="data.js"></script>
-<script src="app.js"></script>
+<script src="data.js?v=5"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>

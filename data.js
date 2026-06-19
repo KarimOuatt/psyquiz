@@ -351,6 +351,62 @@ const QUIZ_DATA = {
           ],
           reponse: 0,
           explication: "Les trois partagent les crises avec perte de contrôle. Le trouble accès hyperphagiques se distingue par : pas de poids significativement bas (≠ anorexie) ET pas de comportements compensatoires réguliers (≠ boulimie)."
+        },
+        {
+          id: "c7-h1", niveau: "difficile", notion: "Anorexie — critères DSM", type: "qcm",
+          question: "Lequel de ces éléments n'est PLUS un critère diagnostique de l'anorexie mentale dans le DSM-5 ?",
+          options: ["L'aménorrhée", "La restriction des apports conduisant à un poids significativement bas", "La peur intense de prendre du poids ou un comportement interférant avec la prise de poids", "L'altération de la perception du poids ou de la forme corporelle"],
+          reponse: 0,
+          explication: "Le DSM-5 a retiré deux critères du DSM-IV : l'aménorrhée et le seuil chiffré de poids (< 85 % du poids attendu). Les trois autres correspondent aux critères A, B et C actuels."
+        },
+        {
+          id: "c7-h2", niveau: "difficile", notion: "Anorexie — sévérité (IMC)", type: "qcm",
+          question: "Une patiente anorexique a un IMC de 17,4 (zone « léger ») mais une bradycardie sévère imposant une hospitalisation. Comment coter la sévérité ?",
+          options: ["On peut MAJORER le degré au-delà de ce qu'indique l'IMC, pour refléter les symptômes cliniques et la nécessité de prise en charge", "Sévérité obligatoirement « léger » : l'IMC prime toujours", "Le diagnostic est impossible au-dessus d'un IMC de 17", "Sévérité « extrême » du seul fait de l'hospitalisation"],
+          reponse: 0,
+          explication: "Le seuil de sévérité s'établit sur l'IMC, mais le degré peut être majoré pour refléter les symptômes cliniques, l'incapacité fonctionnelle et la nécessité de prise en charge."
+        },
+        {
+          id: "c7-h3", niveau: "difficile", notion: "Boulimie — critères DSM", type: "qcm",
+          question: "Une personne boulimique présente en moyenne 6 épisodes de comportements compensatoires par semaine. Quel niveau de sévérité ?",
+          options: ["Moyen", "Léger", "Grave", "Extrême"],
+          reponse: 0,
+          explication: "Sévérité de la boulimie selon la fréquence des comportements compensatoires : léger 1-3 · moyen 4-7 · grave 8-13 · extrême ≥ 14. Donc 6 = moyen."
+        },
+        {
+          id: "c7-h4", niveau: "difficile", notion: "Discrimination AN / boulimie / AH", type: "cas",
+          question: "Un homme à poids normal a des crises hebdomadaires avec perte de contrôle et une détresse marquée depuis 4 mois. Il ne se fait pas vomir, ne jeûne pas et ne fait pas d'exercice compensatoire. Diagnostic le plus précis ?",
+          options: ["Trouble accès hyperphagiques", "Boulimie", "Anorexie mentale type accès hyperphagiques/purgatif", "Trouble purgatif"],
+          reponse: 0,
+          explication: "Crises + perte de contrôle + détresse, SANS comportements compensatoires réguliers et SANS poids bas = trouble accès hyperphagiques. (La boulimie exige des comportements compensatoires ; le trouble purgatif, des purges sans crises.)"
+        },
+        {
+          id: "c7-h5", niveau: "difficile", notion: "Pica, mérycisme & ARFID", type: "cas",
+          question: "Une adolescente en insuffisance pondérale mange très peu car certaines textures la dégoûtent et elle a peur de s'étouffer. Elle n'a AUCUNE peur de grossir ni distorsion de son image corporelle. Diagnostic ?",
+          options: ["Trouble de restriction/évitement de l'ingestion d'aliments (ARFID)", "Anorexie mentale type restrictif", "Boulimie", "Mérycisme"],
+          reponse: 0,
+          explication: "Restriction par évitement sensoriel / peur de s'étouffer, sans peur de grossir ni distorsion corporelle = ARFID. C'est précisément l'absence de préoccupation pour le poids/la silhouette qui l'écarte de l'anorexie."
+        },
+        {
+          id: "c7-h6", niveau: "difficile", notion: "Étiologie des TCA", type: "qcm",
+          question: "Parmi ces affirmations sur l'étiologie des TCA, laquelle est FAUSSE ?",
+          options: ["La boulimie se caractérise surtout par le perfectionnisme rigide et le surcontrôle, et l'anorexie par l'impulsivité", "L'anorexie est associée au perfectionnisme, à la rigidité et au besoin de contrôle", "La boulimie est associée à l'impulsivité et à la pensée « tout ou rien »", "Les effets neurobiologiques de la famine peuvent maintenir l'anorexie"],
+          reponse: 0,
+          explication: "C'est l'inverse : l'anorexie est marquée par le perfectionnisme et le contrôle, la boulimie par l'impulsivité. Les trois autres énoncés sont exacts."
+        },
+        {
+          id: "c7-h7", niveau: "difficile", notion: "Boulimie — caractéristiques", type: "qcm",
+          question: "L'hypokaliémie (perte de potassium) pouvant entraîner des arythmies est surtout liée à…",
+          options: ["Aux purgations (vomissements, laxatifs)", "Au lanugo", "À la restriction calorique pure", "À la diminution de la masse osseuse"],
+          reponse: 0,
+          explication: "Les purgations entraînent une perte de potassium et des perturbations électrolytiques → irrégularités du rythme cardiaque, typiques de la boulimie et de l'anorexie de type AH/purgatif."
+        },
+        {
+          id: "c7-h8", niveau: "difficile", notion: "Discrimination AN / boulimie / AH", type: "qcm",
+          question: "Quelle fréquence minimale de crises est commune à la boulimie ET au trouble accès hyperphagiques ?",
+          options: ["Au moins 1 fois/semaine pendant 3 mois", "Au moins 2 fois/semaine pendant 6 mois", "Au moins 1 fois/mois pendant 6 mois", "Au moins 3 fois/semaine pendant 1 mois"],
+          reponse: 0,
+          explication: "Les deux troubles exigent en moyenne au moins 1 épisode par semaine pendant 3 mois."
         }
       ]
     },
@@ -690,6 +746,62 @@ const QUIZ_DATA = {
           ],
           reponse: 0,
           explication: "Durée de 1 à 6 mois avec symptômes de la schizophrénie = trouble schizophréniforme. L'impact sur le fonctionnement n'est pas requis (la schizophrénie, elle, exige ≥ 6 mois ET une baisse du fonctionnement)."
+        },
+        {
+          id: "c8-h1", niveau: "difficile", notion: "Critères diagnostiques (DSM)", type: "vf",
+          question: "Dans le DSM-5, un seul symptôme suffit au critère A de la schizophrénie si les idées délirantes sont bizarres.",
+          options: ["Vrai", "Faux"],
+          reponse: 1,
+          explication: "Faux : cette règle existait dans le DSM-IV. Le DSM-5 exige ≥ 2 symptômes, dont au moins un parmi idées délirantes, hallucinations ou discours désorganisé — quelle que soit la nature (bizarre ou non)."
+        },
+        {
+          id: "c8-h2", niveau: "difficile", notion: "Étiologie (génétique & dopamine)", type: "qcm",
+          question: "Quelle correspondance est correcte selon l'hypothèse dopaminergique ?",
+          options: ["Hyperactivité mésolimbique → symptômes positifs ; hypoactivité mésocorticale → symptômes négatifs/cognitifs", "Hyperactivité mésocorticale → symptômes positifs", "Hypoactivité mésolimbique → symptômes positifs", "Hyperactivité mésolimbique → symptômes négatifs"],
+          reponse: 0,
+          explication: "Voie mésolimbique hyperactive = symptômes positifs ; voie mésocorticale hypoactive = symptômes négatifs et cognitifs. Les antipsychotiques sont des antagonistes dopaminergiques."
+        },
+        {
+          id: "c8-h3", niveau: "difficile", notion: "Symptômes négatifs", type: "qcm",
+          question: "Lequel n'est PAS un symptôme négatif de la schizophrénie ?",
+          options: ["Le discours désorganisé", "L'émoussement affectif", "L'avolition", "L'anhédonie"],
+          reponse: 0,
+          explication: "Le discours désorganisé est un symptôme POSITIF. Négatifs : affect plat (émoussement), alogie, avolition, anhédonie, asocialité."
+        },
+        {
+          id: "c8-h4", niveau: "difficile", notion: "Critères diagnostiques (DSM)", type: "qcm",
+          question: "Selon le critère D, comment exclut-on un trouble de l'humeur avec caractéristiques psychotiques au profit de la schizophrénie ?",
+          options: ["Pas d'épisode thymique majeur concurrent à la phase active, ou présent seulement brièvement sur la durée totale de la maladie", "Il n'y a jamais d'hallucinations", "Les symptômes durent moins d'un mois", "Le patient n'a aucun symptôme négatif"],
+          reponse: 0,
+          explication: "Critère D : pas d'épisode dépressif/maniaque concomitant à la phase active, ou seulement pendant une courte période. À retenir : les symptômes ne sont pas mieux expliqués par un trouble de l'humeur."
+        },
+        {
+          id: "c8-h5", niveau: "difficile", notion: "Introduction & épidémiologie", type: "qcm",
+          question: "Quel énoncé épidémiologique sur la schizophrénie est exact ?",
+          options: ["Chez les femmes, le taux ré-augmente vers 40 et 60 ans ; chez les hommes il chute après 35 ans", "Elle est globalement plus fréquente chez les femmes", "La prévalence à vie est d'environ 7 %", "Elle apparaît surtout après 50 ans"],
+          reponse: 0,
+          explication: "Prévalence ≈ 0,7 %, plus fréquente chez les hommes, apparition 18-30 ans (un peu plus tôt chez l'homme). Le taux chute après 35 ans chez l'homme et ré-augmente vers 40 et 60 ans chez la femme."
+        },
+        {
+          id: "c8-h6", niveau: "difficile", notion: "Spectre psychotique (durées)", type: "cas",
+          question: "Un patient présente des symptômes psychotiques depuis 5 semaines, sans qu'on sache encore s'il récupérera. Quel diagnostic est le plus approprié ?",
+          options: ["Trouble schizophréniforme (provisoire)", "Trouble psychotique bref", "Schizophrénie", "Trouble délirant"],
+          reponse: 0,
+          explication: "5 semaines > 1 mois : ce n'est plus un trouble psychotique bref (1 jour-1 mois). < 6 mois → schizophréniforme ; on précise « provisoire » tant que la guérison n'est pas observée."
+        },
+        {
+          id: "c8-h7", niveau: "difficile", notion: "Étiologie (génétique & dopamine)", type: "qcm",
+          question: "Lequel ne partage PAS les variations génétiques communes aux 5 grands troubles psychiatriques ?",
+          options: ["Le trouble obsessionnel-compulsif (TOC)", "La schizophrénie", "Le trouble bipolaire", "Le TDAH"],
+          reponse: 0,
+          explication: "Les 5 : schizophrénie, trouble dépressif caractérisé, trouble du spectre de l'autisme, trouble bipolaire, TDAH. Le TOC n'en fait pas partie."
+        },
+        {
+          id: "c8-h8", niveau: "difficile", notion: "Catatonie & comportement désorganisé", type: "qcm",
+          question: "L'échopraxie correspond à…",
+          options: ["La répétition des gestes d'autrui", "La répétition des paroles d'autrui", "Le maintien prolongé de postures", "Le mutisme"],
+          reponse: 0,
+          explication: "Échopraxie = répéter les gestes ; écholalie = répéter les paroles. La catatonie inclut aussi immobilité, mutisme et postures inhabituelles, et n'est pas exclusive à la schizophrénie."
         }
       ]
     },
@@ -995,6 +1107,62 @@ const QUIZ_DATA = {
           ],
           reponse: 0,
           explication: "Le critère distinctif est temporel : le stress aigu couvre 3 jours à 1 mois après l'événement ; au-delà d'un mois (si les critères sont remplis), on parle de TSPT."
+        },
+        {
+          id: "c9a-h1", niveau: "difficile", notion: "Évitement & altérations cognitives (C, D)", type: "qcm",
+          question: "Le « sentiment de détachement d'autrui » et l'« incapacité à éprouver des émotions positives » relèvent de quel critère du TSPT ?",
+          options: ["Critère D — altérations négatives des cognitions et de l'humeur", "Critère B — symptômes envahissants", "Critère C — évitement", "Critère E — altérations de l'éveil/réactivité"],
+          reponse: 0,
+          explication: "Critère D : amnésie dissociative, croyances négatives, distorsions, état émotionnel négatif, perte d'intérêt, détachement d'autrui, incapacité d'éprouver des émotions positives."
+        },
+        {
+          id: "c9a-h2", niveau: "difficile", notion: "Éveil & réactivité (critère E)", type: "qcm",
+          question: "Lequel relève du critère E (éveil/réactivité) et NON du critère B (envahissant) ?",
+          options: ["L'hypervigilance et la réaction de sursaut exagérée", "Les flashbacks", "Les cauchemars liés au trauma", "Les souvenirs intrusifs"],
+          reponse: 0,
+          explication: "Critère E : irritabilité, comportement autodestructeur, hypervigilance, sursaut exagéré, problèmes de concentration, troubles du sommeil. Flashbacks, cauchemars et souvenirs intrusifs relèvent du critère B."
+        },
+        {
+          id: "c9a-h3", niveau: "difficile", notion: "Catégorie & critère A (exposition)", type: "qcm",
+          question: "Lequel n'est PAS un mode d'exposition valide au sens du critère A du TSPT ?",
+          options: ["Voir des images d'un événement traumatique dans les médias ou un film (hors cadre professionnel)", "Être directement exposé à l'événement", "Être témoin direct de l'événement survenu à autrui", "Apprendre qu'un événement violent ou accidentel est arrivé à un proche"],
+          reponse: 0,
+          explication: "L'exposition via les médias/écrans (hors contexte professionnel) ne compte pas. En revanche, l'exposition répétée/extrême dans un cadre professionnel (intervenants de première ligne, policiers) est valide."
+        },
+        {
+          id: "c9a-h4", niveau: "difficile", notion: "Durée & spécifications", type: "qcm",
+          question: "La spécification « à expression retardée » du TSPT signifie que…",
+          options: ["L'ensemble des critères diagnostiques n'est rempli qu'au moins 6 mois après l'événement", "Les symptômes durent plus de 6 mois", "Le trauma remonte à l'enfance", "Le traitement a été retardé"],
+          reponse: 0,
+          explication: "« À expression retardée » : tous les critères ne sont satisfaits qu'au moins 6 mois après l'événement (même si certains symptômes ont pu débuter plus tôt)."
+        },
+        {
+          id: "c9a-h5", niveau: "difficile", notion: "Troubles de l'adaptation", type: "qcm",
+          question: "Pour un trouble de l'adaptation, quel couple de délais est correct ?",
+          options: ["Début dans les 3 mois suivant le stresseur ; les symptômes ne persistent pas plus de 6 mois après la fin du stresseur", "Début dans le mois ; persiste jusqu'à 12 mois", "Début dans les 6 mois ; persiste jusqu'à 3 mois", "Aucune contrainte de délai"],
+          reponse: 0,
+          explication: "Symptômes dans les 3 mois suivant le facteur de stress ; une fois celui-ci (ou ses conséquences) terminé, ils ne persistent pas au-delà de 6 mois."
+        },
+        {
+          id: "c9a-h6", niveau: "difficile", notion: "Troubles de l'adaptation", type: "qcm",
+          question: "Un patient présente des symptômes de deuil typiques après un décès récent. Quel énoncé est correct ?",
+          options: ["Un deuil normal n'est pas un trouble de l'adaptation ; le deuil prolongé se diagnostique après 12 mois", "Tout deuil de plus d'un mois est un trouble de l'adaptation", "Le deuil est toujours un TSPT", "Le deuil prolongé se diagnostique après 3 mois"],
+          reponse: 0,
+          explication: "Les symptômes d'un deuil normal sont explicitement exclus du trouble de l'adaptation. Le trouble du deuil prolongé se diagnostique, lui, après 12 mois."
+        },
+        {
+          id: "c9a-h7", niveau: "difficile", notion: "Durée & spécifications", type: "qcm",
+          question: "Dans la spécification dissociative du TSPT, la DÉPERSONNALISATION correspond à…",
+          options: ["Se sentir détaché de soi-même, comme un observateur de son propre corps/esprit", "Le sentiment que le monde extérieur est irréel ou déformé", "Une amnésie de l'événement", "Des flashbacks répétés"],
+          reponse: 0,
+          explication: "Dépersonnalisation = détachement de soi (observateur de soi-même). Déréalisation = le monde paraît irréel, onirique ou déformé."
+        },
+        {
+          id: "c9a-h8", niveau: "difficile", notion: "Prévalence & évolution du TSPT", type: "qcm",
+          question: "Quel énoncé chiffré sur le TSPT est exact ?",
+          options: ["Comorbidité élevée : plus de 80 % ont au moins un autre trouble ; rétablissement complet vers 3 mois chez ≈ la moitié des adultes", "Prévalence à vie d'environ 25 %", "Plus fréquent chez les hommes", "Aucune comorbidité associée"],
+          reponse: 0,
+          explication: "Prévalence à vie 6,1-8,3 % (+ chez les femmes) ; comorbidité > 80 % ; environ la moitié des adultes se rétablissent vers 3 mois."
         }
       ]
     },
@@ -1317,6 +1485,62 @@ const QUIZ_DATA = {
           ],
           reponse: 0,
           explication: "Intoxication = prise récente : discours bredouillant, incoordination, démarche ébrieuse, nystagmus, stupeur. Sevrage = arrêt : tremblements, sueurs/tachycardie, nausées, convulsions."
+        },
+        {
+          id: "c9b-h1", niveau: "difficile", notion: "Trouble de l'usage — critères", type: "qcm",
+          question: "Dans le trouble de l'usage d'une substance, la tolérance et le sevrage appartiennent à quel groupe de critères ?",
+          options: ["Les critères pharmacologiques", "La réduction du contrôle", "L'altération du fonctionnement social", "La consommation risquée"],
+          reponse: 0,
+          explication: "4 groupes : réduction du contrôle (dont le craving), altération sociale, consommation risquée, et critères pharmacologiques (tolérance, sevrage)."
+        },
+        {
+          id: "c9b-h2", niveau: "difficile", notion: "Trouble de l'usage — critères", type: "qcm",
+          question: "Un patient remplit 5 des critères du trouble de l'usage de l'alcool sur 12 mois. Sévérité ?",
+          options: ["Moyen (4-5)", "Léger (2-3)", "Grave (≥ 6)", "Sous le seuil diagnostique"],
+          reponse: 0,
+          explication: "Léger 2-3 · moyen 4-5 · grave ≥ 6. Donc 5 critères = sévérité moyenne."
+        },
+        {
+          id: "c9b-h3", niveau: "difficile", notion: "Trouble de l'usage — critères", type: "qcm",
+          question: "La rémission précoce d'un trouble de l'usage = absence de critères pendant 3 à 12 mois — avec quelle exception possible ?",
+          options: ["Le craving (A4) peut persister", "La tolérance peut persister", "Le sevrage peut persister", "Aucune exception"],
+          reponse: 0,
+          explication: "Rémission précoce (3-12 mois) et prolongée (≥ 12 mois) : aucun critère rempli, SAUF éventuellement le craving (A4), qui peut subsister."
+        },
+        {
+          id: "c9b-h4", niveau: "difficile", notion: "Intoxication & sevrage (alcool)", type: "qcm",
+          question: "Lequel de ces signes appartient au SEVRAGE alcoolique et NON à l'intoxication ?",
+          options: ["Les crises convulsives tonicocloniques", "Le nystagmus", "La démarche ébrieuse", "Le discours bredouillant"],
+          reponse: 0,
+          explication: "Sevrage : hyperactivité neurovégétative, tremblements, insomnie, nausées, hallucinations transitoires, agitation, anxiété, convulsions. Les trois autres signes relèvent de l'intoxication."
+        },
+        {
+          id: "c9b-h5", niveau: "difficile", notion: "Intoxication & sevrage (alcool)", type: "qcm",
+          question: "Pour quelle substance le DSM-5 ne prévoit-il PAS de diagnostic d'intoxication ?",
+          options: ["Le tabac", "L'alcool", "Le cannabis", "Les opiacés"],
+          reponse: 0,
+          explication: "L'intoxication ne s'applique pas au tabac (en revanche, le sevrage du tabac existe)."
+        },
+        {
+          id: "c9b-h6", niveau: "difficile", notion: "Étiologie — facteurs psychologiques", type: "qcm",
+          question: "Dans les « raisons de boire », viser à éviter la gêne causée par autrui correspond à quelle échelle ?",
+          options: ["Externe négative (conformité)", "Externe positive (sociale)", "Interne négative (compensation)", "Interne positive (renforcement)"],
+          reponse: 0,
+          explication: "Conformité = externe négative (échapper aux épreuves / éviter la gêne due à autrui). Sociale = externe positive ; compensation = interne négative ; renforcement = interne positive."
+        },
+        {
+          id: "c9b-h7", niveau: "difficile", notion: "Classes & organisation du DSM", type: "qcm",
+          question: "Lequel est inclus dans le DSM-5-TR comme trouble addictif NON lié à une substance ?",
+          options: ["Le jeu d'argent pathologique", "L'addiction au sexe", "L'addiction aux achats", "L'addiction à l'exercice"],
+          reponse: 0,
+          explication: "Seul le jeu d'argent pathologique est inclus ; les addictions comportementales (sexe, achats, exercice) sont exclues, faute de données suffisantes."
+        },
+        {
+          id: "c9b-h8", niveau: "difficile", notion: "Alcool — données épidémiologiques", type: "qcm",
+          question: "Selon l'OMS (2014), l'alcool représentait en 2012 environ quelle part de l'ensemble des décès mondiaux ?",
+          options: ["5,9 % (≈ 3,3 millions de décès)", "1 % (≈ 0,5 million)", "12 % (≈ 7 millions)", "0,5 %"],
+          reponse: 0,
+          explication: "≈ 3,3 millions de décès, soit 5,9 % de l'ensemble (7,9 % chez les hommes, 4 % chez les femmes ; 25 % chez les 20-39 ans)."
         }
       ]
     },
@@ -1717,6 +1941,62 @@ const QUIZ_DATA = {
           ],
           reponse: 0,
           explication: "Personnalité évitante (groupe C) : inhibition sociale et hypersensibilité au rejet, AVEC un désir de relations. Le schizoïde, lui, ne recherche pas les relations et y est indifférent."
+        },
+        {
+          id: "c10-h1", niveau: "difficile", notion: "Groupe B — antisociale", type: "qcm",
+          question: "Combien de manifestations (au moins) exige la personnalité ANTISOCIALE, et depuis quel âge les conduites doivent-elles apparaître ?",
+          options: ["3 manifestations depuis l'âge de 15 ans (diagnostic ≥ 18 ans, trouble des conduites avant 15 ans)", "5 manifestations depuis 18 ans", "4 manifestations depuis l'enfance", "2 manifestations depuis 12 ans"],
+          reponse: 0,
+          explication: "Antisociale : ≥ 3 manifestations depuis l'âge de 15 ans ; diagnostic à ≥ 18 ans, avec antécédent de trouble des conduites avant 15 ans. (La plupart des autres TP exigent ≥ 4 ou ≥ 5 manifestations.)"
+        },
+        {
+          id: "c10-h2", niveau: "difficile", notion: "Les 3 groupes (clusters)", type: "qcm",
+          question: "Lequel de ces troubles de la personnalité ne requiert PAS au moins 5 manifestations ?",
+          options: ["Personnalité paranoïaque (≥ 4)", "Personnalité borderline", "Personnalité narcissique", "Personnalité histrionique"],
+          reponse: 0,
+          explication: "Paranoïaque, schizoïde, évitante et obsessionnelle-compulsive exigent ≥ 4 manifestations ; schizotypique, borderline, histrionique, narcissique et dépendante en exigent ≥ 5 ; antisociale ≥ 3."
+        },
+        {
+          id: "c10-h3", niveau: "difficile", notion: "Groupe C — prévalences", type: "qcm",
+          question: "Quel trouble de la personnalité a la prévalence la plus élevée selon le cours ?",
+          options: ["Obsessionnelle-compulsive (4-8 %)", "Borderline (2-6 %)", "Évitante (2 %)", "Dépendante (1 %)"],
+          reponse: 0,
+          explication: "La personnalité obsessionnelle-compulsive (4-8 %, + chez les hommes) est la plus prévalente parmi celles chiffrées dans le cours."
+        },
+        {
+          id: "c10-h4", niveau: "difficile", notion: "Groupe C — obsessionnelle-compulsive", type: "qcm",
+          question: "Quel énoncé distingue correctement la personnalité obsessionnelle-compulsive (TPOC) du TOC ?",
+          options: ["Le TPOC est égosyntonique (traits perçus comme normaux) ; moins de 20 % des personnes avec un TOC ont un TPOC", "Le TPOC comporte des obsessions et compulsions intrusives", "Le TOC est un trouble de la personnalité", "Les deux sont identiques"],
+          reponse: 0,
+          explication: "Le TPOC (perfectionnisme/contrôle, égosyntonique) est distinct du TOC (obsessions/compulsions égodystoniques). Moins de 20 % des personnes avec un TOC présentent un TPOC."
+        },
+        {
+          id: "c10-h5", niveau: "difficile", notion: "Groupe A — schizoïde", type: "cas",
+          question: "Un homme vit seul, n'a aucun ami et n'en ressent pas le besoin ; il est indifférent aux éloges comme aux critiques et n'a pas de croyances bizarres. Trouble le plus probable ?",
+          options: ["Personnalité schizoïde", "Personnalité évitante", "Personnalité schizotypique", "Personnalité paranoïaque"],
+          reponse: 0,
+          explication: "Détachement + absence de désir de relations + indifférence aux éloges/critiques, SANS distorsions cognitives ni excentricité = schizoïde. (L'évitante DÉSIRE des liens mais les fuit ; la schizotypique a une pensée magique/des conduites excentriques.)"
+        },
+        {
+          id: "c10-h6", niveau: "difficile", notion: "Groupe B — borderline (critères)", type: "cas",
+          question: "Une personne a des relations intenses et instables, une peur de l'abandon, une instabilité de l'identité, des automutilations et une dysphorie qui dure quelques heures. Diagnostic le plus précis ?",
+          options: ["Personnalité borderline", "Personnalité histrionique", "Personnalité narcissique", "Personnalité dépendante"],
+          reponse: 0,
+          explication: "Instabilité des relations/de l'identité/des affects + impulsivité + automutilation + peur de l'abandon = borderline. L'histrionique cherche l'attention ; la narcissique est grandiose ; la dépendante est soumise et « collante »."
+        },
+        {
+          id: "c10-h7", niveau: "difficile", notion: "Traitement — approches", type: "qcm",
+          question: "Parmi ces psychothérapies, laquelle est PSYCHODYNAMIQUE (et non cognitivo-comportementale) ?",
+          options: ["La thérapie focalisée sur le transfert (TFP)", "La thérapie comportementale dialectique (DBT)", "La thérapie des schémas", "Aucune des trois"],
+          reponse: 0,
+          explication: "Psychodynamiques : TFP et thérapie basée sur la mentalisation (MBT). TCC : DBT et thérapie des schémas. La psychothérapie de soutien vise à stabiliser et contenir."
+        },
+        {
+          id: "c10-h8", niveau: "difficile", notion: "Traitement — approches", type: "vf",
+          question: "Pour le trouble borderline, la pharmacothérapie est considérée comme peu efficace et sert surtout à atténuer certains symptômes.",
+          options: ["Vrai", "Faux"],
+          reponse: 0,
+          explication: "Vrai : antidépresseurs et antipsychotiques atténuent l'anxiété, la tendance suicidaire ou les symptômes psychotiques, mais la pharmacothérapie est jugée peu efficace (avec un risque d'abus). La psychothérapie reste centrale."
         }
       ]
     },
@@ -2047,6 +2327,62 @@ const QUIZ_DATA = {
           ],
           reponse: 0,
           explication: "Inhibiteurs de la PDE-5 (Viagra, Cialis, Levitra) pour la dysfonction érectile ; ISRS pour l'éjaculation précoce ; et traitement des causes médicales sous-jacentes. La thérapie sexuelle et la TCC restent centrales."
+        },
+        {
+          id: "c11-h1", niveau: "difficile", notion: "Dysphorie de genre — critères", type: "qcm",
+          question: "Lequel n'est PAS requis pour le diagnostic de dysphorie de genre chez l'adolescent/adulte ?",
+          options: ["Avoir entamé une transition médicale", "Une non-congruence marquée d'au moins 6 mois", "Au moins 2 des 6 manifestations", "Une détresse cliniquement significative ou une altération du fonctionnement"],
+          reponse: 0,
+          explication: "La transition médicale n'est pas un critère diagnostique. Le diagnostic repose sur la non-congruence ≥ 6 mois (≥ 2 items) ET la détresse/altération (critère B)."
+        },
+        {
+          id: "c11-h2", niveau: "difficile", notion: "Dysphorie de genre — critères", type: "qcm",
+          question: "Lequel est une caractéristique sexuelle SECONDAIRE (et non primaire) ?",
+          options: ["La voix / la pilosité pubienne", "L'utérus", "Les testicules", "Les ovaires"],
+          reponse: 0,
+          explication: "Secondaires : voix, pilosité, poitrine, menstruations, éjaculation. Primaires : organes reproducteurs (utérus, ovaires, testicules, pénis, prostate…)."
+        },
+        {
+          id: "c11-h3", niveau: "difficile", notion: "Paraphilies — définitions", type: "qcm",
+          question: "Une personne a un intérêt paraphilique mais sans détresse, sans altération du fonctionnement et sans préjudice à autrui. Que peut-on dire ?",
+          options: ["C'est une paraphilie, mais pas un TROUBLE paraphilique", "C'est automatiquement un trouble paraphilique", "C'est une dysfonction sexuelle", "C'est un trouble de l'usage"],
+          reponse: 0,
+          explication: "Le TROUBLE paraphilique suppose une détresse/altération OU un préjudice (ou risque) à autrui, depuis plus de 6 mois. Sans cela, il s'agit d'une paraphilie sans trouble."
+        },
+        {
+          id: "c11-h4", niveau: "difficile", notion: "Paraphilies — types", type: "qcm",
+          question: "Quels deux troubles paraphiliques constituent la majorité des crimes sexuels signalés ?",
+          options: ["Exhibitionnisme et voyeurisme", "Fétichisme et transvestisme", "Sadisme et masochisme", "Pédophilie et frotteurisme"],
+          reponse: 0,
+          explication: "L'exhibitionnisme et le voyeurisme représentent la majorité des crimes sexuels signalés à la police."
+        },
+        {
+          id: "c11-h5", niveau: "difficile", notion: "Paraphilies — pédophilie & inceste", type: "qcm",
+          question: "Quelle condition d'âge fait partie des critères du trouble pédophilie ?",
+          options: ["Avoir ≥ 16 ans ET au moins 5 ans de plus que l'enfant prépubère", "Avoir ≥ 18 ans et 10 ans de plus", "Avoir ≥ 21 ans", "Aucune condition d'âge"],
+          reponse: 0,
+          explication: "Enfant prépubère (≈ ≤ 13 ans) ; l'individu doit avoir ≥ 16 ans ET ≥ 5 ans de plus que l'enfant (avec jugement clinique pour un grand adolescent face à un enfant de 12-13 ans)."
+        },
+        {
+          id: "c11-h6", niveau: "difficile", notion: "Dysfonctions sexuelles — réponse sexuelle", type: "qcm",
+          question: "Lequel inclut la phase de DÉSIR, absente du modèle original en 4 phases de Masters & Johnson ?",
+          options: ["Le cycle de la réponse sexuelle (désir → excitation → orgasme → résolution)", "Le modèle de Masters & Johnson (1966)", "Aucun des deux", "Les deux, de façon identique"],
+          reponse: 0,
+          explication: "Masters & Johnson (1966) : excitation, plateau, orgasme, résolution (pas de phase « désir »). Le cycle de la réponse sexuelle ajoute le désir en amont."
+        },
+        {
+          id: "c11-h7", niveau: "difficile", notion: "Dysfonctions sexuelles — types", type: "qcm",
+          question: "Le trouble de l'intérêt/excitation sexuelle chez la femme exige au moins combien de critères ?",
+          options: ["3 sur 6", "1 sur 6", "Les 6", "5 sur 6"],
+          reponse: 0,
+          explication: "≥ 3 des 6 critères (intérêt, fantasmes, initiation/réactivité, excitation/plaisir ≥ 75 %, réponse aux stimuli, sensations génitales/non) pendant au moins 6 mois."
+        },
+        {
+          id: "c11-h8", niveau: "difficile", notion: "Dysfonctions sexuelles — traitement", type: "qcm",
+          question: "Quelle association traitement-trouble est correcte ?",
+          options: ["ISRS → éjaculation précoce ET troubles paraphiliques ; PDE-5 → dysfonction érectile", "PDE-5 → éjaculation précoce ; ISRS → dysfonction érectile", "Antipsychotiques → dysfonction érectile", "PDE-5 → troubles paraphiliques"],
+          reponse: 0,
+          explication: "Les ISRS servent à l'éjaculation précoce et, dans les troubles paraphiliques, à réduire les pensées sexuelles intrusives et la compulsivité. Les inhibiteurs de la PDE-5 traitent la dysfonction érectile."
         }
       ]
     },
@@ -2419,6 +2755,62 @@ const QUIZ_DATA = {
           ],
           reponse: 0,
           explication: "TCC : exposition, relaxation, jeux de rôles, dialogue interne ; objectif : reconnaître les signes d'anxiété pour déclencher les stratégies de gestion. La médication a une efficacité démontrée dans certaines études, mais la psychothérapie reste primordiale."
+        },
+        {
+          id: "c12-h1", niveau: "difficile", notion: "TSA — critères", type: "qcm",
+          question: "Pour le TSA, quelle combinaison de critères est correcte ?",
+          options: ["Critère A : les 3 déficits de communication sociale ; Critère B : ≥ 2 des 4 comportements restreints/répétitifs", "Critère A : 1 des 3 ; Critère B : 1 des 4", "Critère A : 2 des 3 ; Critère B : 3 des 4", "Critère A : ≥ 2 ; Critère B : ≥ 3"],
+          reponse: 0,
+          explication: "TSA : critère A = les trois déficits de communication sociale ; critère B = au moins 2 des 4 modes restreints/répétitifs (stéréotypies, insistance sur la similarité, intérêts restreints, particularités sensorielles)."
+        },
+        {
+          id: "c12-h2", niveau: "difficile", notion: "TDAH — critères", type: "qcm",
+          question: "Quel énoncé sur le TDAH est FAUX ?",
+          options: ["Il faut que les symptômes soient tous apparus APRÈS l'âge de 12 ans", "Il faut ≥ 6 symptômes (≥ 5 chez les 17 ans et plus)", "Les symptômes doivent être présents dans ≥ 2 contextes", "Il existe 3 présentations (combinée, inattention, hyperactivité/impulsivité)"],
+          reponse: 0,
+          explication: "Faux : plusieurs symptômes doivent être présents AVANT 12 ans (et non après). Les trois autres énoncés sont exacts."
+        },
+        {
+          id: "c12-h3", niveau: "difficile", notion: "Handicap intellectuel", type: "qcm",
+          question: "Concernant le handicap intellectuel, quel énoncé est exact ?",
+          options: ["Léger ≈ QI 50-70, soit ≈ 85 % des cas ; début avant 18 ans avec déficit du fonctionnement adaptatif", "Le QI seul suffit au diagnostic", "Le niveau profond représente la majorité des cas", "Il débute toujours à l'âge adulte"],
+          reponse: 0,
+          explication: "Léger (QI ≈ 50-70) = 85 % des cas ; le diagnostic exige aussi un déficit du fonctionnement adaptatif (3 domaines), avec un début avant 18 ans. Le QI seul ne suffit pas."
+        },
+        {
+          id: "c12-h4", niveau: "difficile", notion: "Trouble des conduites", type: "qcm",
+          question: "Quel énoncé sur le trouble des conduites est exact ?",
+          options: ["≥ 3 critères sur 12 mois (et ≥ 1 sur 6 mois) ; le sous-type « dureté/insensibilité » est de plus mauvais pronostic", "≥ 5 critères sur 1 mois", "Il ne peut jamais évoluer vers la personnalité antisociale", "Un début après 15 ans est de plus mauvais pronostic"],
+          reponse: 0,
+          explication: "≥ 3 critères/12 mois et ≥ 1/6 mois, en 4 catégories. Un début précoce (< 10 ans) et le sous-type avec traits de dureté/insensibilité (manque d'empathie) annoncent un pronostic plus sévère."
+        },
+        {
+          id: "c12-h5", niveau: "difficile", notion: "Trouble oppositionnel avec provocation (TOP)", type: "qcm",
+          question: "Quelle affirmation sur le lien TOP / trouble des conduites est correcte ?",
+          options: ["La plupart des jeunes avec un trouble des conduites ont reçu un diagnostic de TOP (et non l'inverse)", "Tous les TOP évoluent en trouble des conduites", "Le TOP exige des agressions physiques graves", "Le TOP n'a aucune comorbidité avec le TDAH"],
+          reponse: 0,
+          explication: "La plupart des individus avec un trouble des conduites ont eu un TOP, mais l'inverse n'est pas vrai. Forte comorbidité TOP-TDAH-trouble des conduites ; mécanisme clé du TOP : biais d'attribution hostile et cercle coercitif."
+        },
+        {
+          id: "c12-h6", niveau: "difficile", notion: "Anxiété de séparation", type: "qcm",
+          question: "Quelle paire de durées minimales est correcte ?",
+          options: ["Anxiété de séparation : ≥ 4 semaines chez l'enfant/ado ; mutisme sélectif : ≥ 1 mois", "Anxiété de séparation : 6 mois chez l'enfant ; mutisme : 6 mois", "Les deux : ≥ 1 an", "Anxiété de séparation : 48 h ; mutisme : 2 semaines"],
+          reponse: 0,
+          explication: "Anxiété de séparation : ≥ 4 semaines chez l'enfant/ado (6 mois chez l'adulte). Mutisme sélectif : ≥ 1 mois (pas seulement le premier mois d'école)."
+        },
+        {
+          id: "c12-h7", niveau: "difficile", notion: "TSA — sévérité & étiologie", type: "qcm",
+          question: "Parmi ces troubles, lequel a l'héritabilité la PLUS forte selon le cours ?",
+          options: ["Le trouble du spectre de l'autisme (≈ 60-90 %)", "Le TDAH (≈ 75 %)", "Le trouble des conduites", "Le trouble de la communication sociale"],
+          reponse: 0,
+          explication: "Le TSA a l'héritabilité la plus forte (≈ 60-90 %), supérieure même à celle de la schizophrénie et du trouble bipolaire ; le TDAH ≈ 75 %."
+        },
+        {
+          id: "c12-h8", niveau: "difficile", notion: "Troubles de la communication", type: "qcm",
+          question: "Quel énoncé sur les troubles de la communication est exact ?",
+          options: ["Le trouble de la communication sociale (pragmatique) a été ajouté au DSM-5 ; le bégaiement apparaît vers 5 ans et 65-85 % le surmontent", "Le bégaiement apparaît à l'âge adulte", "Le trouble du langage = une prononciation déficiente avec un vocabulaire intact", "La communication sociale pragmatique existait déjà dans le DSM-IV"],
+          reponse: 0,
+          explication: "Le trouble de la communication sociale (pragmatique) est un ajout du DSM-5. Le bégaiement (trouble de la fluidité) apparaît vers 5 ans, surtout chez les garçons ; 65-85 % le surmontent. (Le trouble du langage concerne l'expression/la grammaire ; la prononciation relève du trouble de la phonation.)"
         }
       ]
     }

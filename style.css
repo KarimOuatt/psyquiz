@@ -70,6 +70,25 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -.01em
 }
 .section-title .st-emoji { font-size: 1.1rem; }
 
+/* ====== Sélecteur de niveau ====== */
+.level-switch {
+  display: flex; gap: 4px; padding: 5px; width: fit-content;
+  background: #eceef5; border: 1px solid var(--line); border-radius: 999px;
+  margin: 0 auto 10px;
+}
+.level-opt {
+  border: none; background: transparent; cursor: pointer; font-family: inherit;
+  font-size: .9rem; font-weight: 700; color: var(--muted);
+  padding: 9px 20px; border-radius: 999px; transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+.level-opt:hover { color: var(--ink); }
+.level-opt.active { background: var(--card); color: var(--ink); box-shadow: var(--shadow-sm); }
+.level-opt[data-level="difficile"].active { color: #c2410c; }
+.level-hint { text-align: center; color: var(--muted); font-size: .85rem; margin-bottom: 18px; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.chapter-card.empty { opacity: .6; cursor: not-allowed; }
+.chapter-card.empty::before { background: var(--line-strong); }
+
 /* ====== Boutons de mode ====== */
 .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .mode-btn {
