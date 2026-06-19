@@ -407,6 +407,55 @@ const QUIZ_DATA = {
           options: ["Au moins 1 fois/semaine pendant 3 mois", "Au moins 2 fois/semaine pendant 6 mois", "Au moins 1 fois/mois pendant 6 mois", "Au moins 3 fois/semaine pendant 1 mois"],
           reponse: 0,
           explication: "Les deux troubles exigent en moyenne au moins 1 épisode par semaine pendant 3 mois."
+        },
+        {
+          id: "c7-h9", niveau: "difficile", notion: "Anorexie — caractéristiques", type: "qcm",
+          question: "Lequel de ces chiffres de prévalence est exact selon le cours ?",
+          options: ["Anorexie à vie : F ≈ 1 %, H ≈ 0,3 %", "Anorexie à vie : F ≈ 3,5 %", "Boulimie sur 12 mois : F ≈ 5 %", "Accès hyperphagiques à vie chez F ≈ 0,3 %"],
+          reponse: 0,
+          explication: "Anorexie à vie : F 1 %, H 0,3 % (ratio 1:10). Boulimie 12 mois : F 1,5 %, H 0,5 %. Accès hyperphagiques à vie : F 3,5 %, H 2 %."
+        },
+        {
+          id: "c7-h10", niveau: "difficile", notion: "Accès hyperphagiques", type: "qcm",
+          question: "Quelle est la prévalence sur 12 mois du trouble accès hyperphagiques chez les femmes ?",
+          options: ["0,6 à 1,6 %", "3,5 %", "5 à 10 %", "0,1 %"],
+          reponse: 0,
+          explication: "Accès hyperphagiques sur 12 mois : F 0,6-1,6 %, H 0,26-0,8 % (à vie : F 3,5 %, H 2 %)."
+        },
+        {
+          id: "c7-h11", niveau: "difficile", notion: "Anorexie — critères DSM", type: "qcm",
+          question: "Qu'est-ce qui caractérise le type RESTRICTIF de l'anorexie par rapport au type avec accès/purge ?",
+          options: ["Contrôle très rigide, impulsivité plus faible, perte de poids par restriction seule", "Alternance contrôle/perte de contrôle et impulsivité plus élevée", "Présence de vomissements et de crises", "Poids normal maintenu"],
+          reponse: 0,
+          explication: "Type restrictif : restriction seule, contrôle très rigide, impulsivité plus faible, pas de crises ni purges. Type AH/purgatif : crises et/ou purges, alternance contrôle/perte de contrôle, impulsivité plus élevée."
+        },
+        {
+          id: "c7-h12", niveau: "difficile", notion: "Pica, mérycisme & ARFID", type: "qcm",
+          question: "Le mérycisme (régurgitation répétée) a typiquement une fonction…",
+          options: ["D'apaisement et d'auto-stimulation", "De contrôle du poids", "Compensatoire après une crise", "De purge"],
+          reponse: 0,
+          explication: "Le mérycisme semble avoir une fonction d'apaisement et d'auto-stimulation, surtout chez les personnes avec un trouble du développement intellectuel ; prévalence 1-2 % des enfants d'âge scolaire."
+        },
+        {
+          id: "c7-h13", niveau: "difficile", notion: "Anorexie — caractéristiques", type: "qcm",
+          question: "Toutes ces conséquences sont associées à l'anorexie SAUF une. Laquelle ?",
+          options: ["La perte de potassium par les vomissements", "Le lanugo", "La diminution de la taille du cerveau", "La diminution de la masse osseuse"],
+          reponse: 0,
+          explication: "La perte de potassium est surtout liée aux purgations (boulimie / AN-AH-P). Lanugo, ↓ taille du cerveau et ↓ masse osseuse sont des conséquences classiques de l'anorexie."
+        },
+        {
+          id: "c7-h14", niveau: "difficile", notion: "Traitement des TCA", type: "qcm",
+          question: "Pour l'anorexie chez l'ADULTE, quelle psychothérapie est recommandée (vs le FBT chez l'adolescent) ?",
+          options: ["CBT-E, thérapie interpersonnelle, approches psychodynamiques, thérapies centrées sur les émotions", "Le FBT (méthode Maudsley)", "La fluoxétine seule", "La DBT de Linehan"],
+          reponse: 0,
+          explication: "Adolescents : FBT (méthode Maudsley). Adultes : CBT-E, thérapie interpersonnelle, approches psychodynamiques/intersubjectives, thérapies centrées sur les émotions."
+        },
+        {
+          id: "c7-h15", niveau: "difficile", notion: "Anorexie — pronostic", type: "qcm",
+          question: "Avec traitement, quelle répartition du pronostic de l'anorexie est exacte ?",
+          options: ["½ rémission complète, ¼ rémission partielle, ¼ absence de rémission", "⅓ – ⅓ – ⅓", "¾ rémission complète", "10 % de rémission complète"],
+          reponse: 0,
+          explication: "Avec traitement : ½ rémission complète, ¼ partielle, ¼ absence. Sans traitement et avec symptômes sévères, environ 10 % meurent."
         }
       ]
     },
@@ -802,6 +851,55 @@ const QUIZ_DATA = {
           options: ["La répétition des gestes d'autrui", "La répétition des paroles d'autrui", "Le maintien prolongé de postures", "Le mutisme"],
           reponse: 0,
           explication: "Échopraxie = répéter les gestes ; écholalie = répéter les paroles. La catatonie inclut aussi immobilité, mutisme et postures inhabituelles, et n'est pas exclusive à la schizophrénie."
+        },
+        {
+          id: "c8-h9", niveau: "difficile", notion: "Introduction & épidémiologie", type: "qcm",
+          question: "Selon le cours, quelle comorbidité de la schizophrénie a la prévalence indiquée correcte ?",
+          options: ["Troubles liés à l'usage d'une substance ≈ 37 %", "Trouble dépressif caractérisé ≈ 15 %", "Phobie sociale ≈ 40 %", "TUS ≈ 5 %"],
+          reponse: 0,
+          explication: "Comorbidités : TUS 37 %, trouble dépressif caractérisé 40 %, phobie sociale 14,9 %."
+        },
+        {
+          id: "c8-h10", niveau: "difficile", notion: "Introduction & épidémiologie", type: "qcm",
+          question: "Quelle proportion de patients la schizophrénie représente-t-elle dans les hôpitaux psychiatriques (vs généraux) ?",
+          options: ["≈ 30,9 % en hôpital psychiatrique (vs 19,9 % en hôpital général)", "≈ 5 %", "≈ 50 %", "≈ 19,9 % en psychiatrique (vs 30,9 % en général)"],
+          reponse: 0,
+          explication: "19,9 % des patients des hôpitaux généraux et 30,9 % des hôpitaux psychiatriques. Les hommes sont davantage hospitalisés que les femmes."
+        },
+        {
+          id: "c8-h11", niveau: "difficile", notion: "Idées délirantes", type: "qcm",
+          question: "Laquelle de ces idées délirantes est BIZARRE (impossible) plutôt que non bizarre ?",
+          options: ["« Quelqu'un vole mes pensées avant que je parle »", "« Mon conjoint me trompe »", "« La police me surveille »", "« Mes collègues veulent me faire renvoyer »"],
+          reponse: 0,
+          explication: "Le vol de la pensée est un délire bizarre (impossible, désorganisé, typique de la schizophrénie). Les trois autres sont des délires non bizarres (plausibles mais faux)."
+        },
+        {
+          id: "c8-h12", niveau: "difficile", notion: "Introduction & épidémiologie", type: "qcm",
+          question: "La rémission de la schizophrénie est plus fréquente dans tous ces cas SAUF…",
+          options: ["Une durée plus longue de la psychose non traitée", "Des symptômes plus légers", "Un meilleur fonctionnement", "Une réponse plus rapide au traitement"],
+          reponse: 0,
+          explication: "La rémission (≈ 35 %, ~1 sur 3) est plus fréquente quand la durée de psychose non traitée est COURTE, avec des symptômes légers, un meilleur fonctionnement et une réponse rapide."
+        },
+        {
+          id: "c8-h13", niveau: "difficile", notion: "Spectre psychotique (durées)", type: "qcm",
+          question: "Qu'est-ce qui différencie le trouble schizophréniforme du trouble psychotique bref ?",
+          options: ["Le schizophréniforme peut comporter des symptômes négatifs et dure jusqu'à 6 mois ; le bref n'a pas de symptômes négatifs et dure < 1 mois", "Le bref dure plus longtemps", "Le schizophréniforme exige un épisode thymique", "Aucune différence de durée"],
+          reponse: 0,
+          explication: "Bref : 1 jour-1 mois, pas de symptômes négatifs, retour au fonctionnement. Schizophréniforme : < 6 mois, symptômes négatifs possibles, impact fonctionnel non requis."
+        },
+        {
+          id: "c8-h14", niveau: "difficile", notion: "Étiologie (génétique & dopamine)", type: "qcm",
+          question: "Quel argument soutient l'implication du GLUTAMATE dans la schizophrénie ?",
+          options: ["La PCP, qui agit sur le glutamate, mime les symptômes de la schizophrénie ; faibles taux de glutamate dans le LCR", "Les antipsychotiques augmentent la dopamine", "La sérotonine n'a aucun rôle", "Le glutamate cause uniquement les symptômes positifs"],
+          reponse: 0,
+          explication: "Faibles taux de glutamate dans le liquide cérébrospinal ; la PCP agit sur le glutamate et mime la schizophrénie. De nouveaux médicaments agissent aussi sur la sérotonine (5-HT)."
+        },
+        {
+          id: "c8-h15", niveau: "difficile", notion: "Traitement", type: "qcm",
+          question: "Quelle association antipsychotique/génération est correcte ?",
+          options: ["Rispéridone et olanzapine = 2e génération (atypiques) ; halopéridol et chlorpromazine = 1re génération (typiques)", "Halopéridol = 2e génération", "Clozapine = 1re génération sans surveillance", "Quétiapine = 1re génération"],
+          reponse: 0,
+          explication: "2e génération (atypiques, effets secondaires plus favorables) : rispéridone, olanzapine, aripiprazole, quétiapine. 1re génération (typiques) : halopéridol, chlorpromazine. La clozapine, la plus efficace pour les cas complexes, exige une surveillance sanguine stricte."
         }
       ]
     },
@@ -1163,6 +1261,55 @@ const QUIZ_DATA = {
           options: ["Comorbidité élevée : plus de 80 % ont au moins un autre trouble ; rétablissement complet vers 3 mois chez ≈ la moitié des adultes", "Prévalence à vie d'environ 25 %", "Plus fréquent chez les hommes", "Aucune comorbidité associée"],
           reponse: 0,
           explication: "Prévalence à vie 6,1-8,3 % (+ chez les femmes) ; comorbidité > 80 % ; environ la moitié des adultes se rétablissent vers 3 mois."
+        },
+        {
+          id: "c9a-h9", niveau: "difficile", notion: "Prévalence & évolution du TSPT", type: "qcm",
+          question: "Quelles prévalences du TSPT sont exactes selon le cours ?",
+          options: ["À vie 6,1-8,3 % ; 12 mois 4,7 % ; plus fréquent chez les femmes", "À vie 1-2 % ; 12 mois 0,5 %", "À vie 25 % ; 12 mois 10 %", "À vie 6,1-8,3 % ; plus fréquent chez les hommes"],
+          reponse: 0,
+          explication: "À vie 6,1-8,3 % ; sur 12 mois 4,7 % ; F ++."
+        },
+        {
+          id: "c9a-h10", niveau: "difficile", notion: "Prévalence & évolution du TSPT", type: "qcm",
+          question: "Chez les survivants de viol, de combat, de captivité ou de génocide, la proportion développant un TSPT est d'environ…",
+          options: ["1/3 à 1/2", "1/10", "2/3 à 3/4", "Moins de 5 %"],
+          reponse: 0,
+          explication: "1/3 à 1/2. Le risque est aussi accru chez les vétérans, policiers, ambulanciers et le personnel médical."
+        },
+        {
+          id: "c9a-h11", niveau: "difficile", notion: "Éveil & réactivité (critère E)", type: "qcm",
+          question: "Combien d'éléments (au moins) exigent respectivement le critère D et le critère E du TSPT ?",
+          options: ["2 pour le critère D et 2 pour le critère E", "1 et 1", "3 et 3", "2 et 3"],
+          reponse: 0,
+          explication: "Critère D (cognitions/humeur) : ≥ 2 éléments. Critère E (éveil/réactivité) : ≥ 2 éléments. Critère C (évitement) : ≥ 1 des 2."
+        },
+        {
+          id: "c9a-h12", niveau: "difficile", notion: "Évitement & altérations cognitives (C, D)", type: "qcm",
+          question: "Le critère C (évitement) du TSPT exige…",
+          options: ["Au moins 1 des 2 manifestations (souvenirs internes et/ou rappels externes)", "Au moins 2 manifestations", "Au moins 3 manifestations", "Les 2 obligatoirement"],
+          reponse: 0,
+          explication: "Critère C : 1 des 2 suffit — éviter les souvenirs/pensées/sentiments OU éviter les rappels externes."
+        },
+        {
+          id: "c9a-h13", niveau: "difficile", notion: "Durée & spécifications", type: "qcm",
+          question: "Toutes ces affirmations temporelles sur le TSPT sont vraies SAUF une. Laquelle est FAUSSE ?",
+          options: ["« À expression retardée » signifie que les symptômes durent plus de 6 mois", "Le stress aigu couvre 3 jours à 1 mois", "Le TSPT exige une perturbation de plus d'un mois", "Le rétablissement complet survient vers 3 mois chez ~½ des adultes"],
+          reponse: 0,
+          explication: "Faux : « à expression retardée » = l'ensemble des critères n'est rempli qu'au moins 6 mois APRÈS l'événement (ce n'est pas la durée des symptômes)."
+        },
+        {
+          id: "c9a-h14", niveau: "difficile", notion: "Troubles de l'adaptation", type: "qcm",
+          question: "Concernant les troubles de l'adaptation, lequel est exact ?",
+          options: ["Prévalence 5-20 % en ambulatoire ; associés à un risque accru de suicide", "Prévalence < 1 %", "Jamais associés au suicide", "Diagnostiqués pour un deuil normal"],
+          reponse: 0,
+          explication: "Fréquents (5-20 % en ambulatoire), risque ↑ de tentatives et de suicide, souvent comorbides d'affections médicales. Le deuil normal est explicitement exclu."
+        },
+        {
+          id: "c9a-h15", niveau: "difficile", notion: "Facteurs de risque", type: "qcm",
+          question: "Lequel est un facteur AUGMENTANT le risque de TSPT selon le cours ?",
+          options: ["La dissociation pendant l'événement et sa persistance ensuite", "Un bon soutien social", "Un niveau d'éducation élevé", "Un événement non interpersonnel"],
+          reponse: 0,
+          explication: "Facteurs de risque : sévérité du trauma, perception de menace mortelle, blessures, violence interpersonnelle, dissociation péri- et post-traumatique ; chez les militaires : avoir commis des violences, tué ou été témoin d'atrocités."
         }
       ]
     },
@@ -1541,6 +1688,55 @@ const QUIZ_DATA = {
           options: ["5,9 % (≈ 3,3 millions de décès)", "1 % (≈ 0,5 million)", "12 % (≈ 7 millions)", "0,5 %"],
           reponse: 0,
           explication: "≈ 3,3 millions de décès, soit 5,9 % de l'ensemble (7,9 % chez les hommes, 4 % chez les femmes ; 25 % chez les 20-39 ans)."
+        },
+        {
+          id: "c9b-h9", niveau: "difficile", notion: "Alcool — données épidémiologiques", type: "qcm",
+          question: "Selon l'OMS (2014), quelle répartition des décès liés à l'alcool (2012) est exacte ?",
+          options: ["7,9 % des décès chez les hommes, 4 % chez les femmes, 25 % chez les 20-39 ans", "4 % chez les hommes, 7,9 % chez les femmes", "25 % chez les plus de 60 ans", "1 % toutes catégories"],
+          reponse: 0,
+          explication: "≈ 3,3 millions de décès (5,9 % du total) ; 7,9 % chez les hommes, 4 % chez les femmes, 25 % chez les 20-39 ans ; facteur dans plus de 200 maladies/blessures."
+        },
+        {
+          id: "c9b-h10", niveau: "difficile", notion: "Classes & organisation du DSM", type: "qcm",
+          question: "Lequel ne fait PAS partie des 10 classes de substances du DSM-5-TR ?",
+          options: ["Les antidépresseurs", "Les opiacés", "Les sédatifs/hypnotiques/anxiolytiques", "Les substances inhalées"],
+          reponse: 0,
+          explication: "Les 10 classes : alcool, caféine, cannabis, hallucinogènes (PCP inclus), substances inhalées, opiacés, sédatifs/hypnotiques/anxiolytiques, stimulants, tabac, substance autre/inconnue."
+        },
+        {
+          id: "c9b-h11", niveau: "difficile", notion: "Intoxication & sevrage (alcool)", type: "qcm",
+          question: "Parmi les critères de l'intoxication, lequel est exact ?",
+          options: ["Syndrome réversible spécifique dû à une prise récente, avec changements comportementaux/psychologiques problématiques", "Syndrome irréversible", "Survient seulement après un usage prolongé", "S'applique au tabac"],
+          reponse: 0,
+          explication: "Intoxication : syndrome réversible spécifique d'une substance, dû à une prise récente, avec changements significatifs (effets sur le SNC). Ne s'applique pas au tabac."
+        },
+        {
+          id: "c9b-h12", niveau: "difficile", notion: "Étiologie — facteurs biologiques", type: "qcm",
+          question: "Lequel ne fait PAS partie du circuit de récompense mésolimbique dopaminergique décrit ?",
+          options: ["L'hippocampe", "L'aire tegmentale ventrale", "Le noyau accumbens", "Le cortex préfrontal"],
+          reponse: 0,
+          explication: "Circuit mésolimbique : aire tegmentale ventrale, noyau accumbens, cortex préfrontal. L'hippocampe n'est pas mentionné dans le cours."
+        },
+        {
+          id: "c9b-h13", niveau: "difficile", notion: "Étiologie — facteurs psychologiques", type: "qcm",
+          question: "« Rechercher un état d'esprit positif » correspond à quelle échelle des raisons de boire ?",
+          options: ["Interne positive (renforcement)", "Interne négative (compensation)", "Externe positive (sociale)", "Externe négative (conformité)"],
+          reponse: 0,
+          explication: "Renforcement = interne positive (état d'esprit positif) ; compensation = interne négative ; sociale = externe positive ; conformité = externe négative."
+        },
+        {
+          id: "c9b-h14", niveau: "difficile", notion: "Étiologie — facteurs biologiques", type: "qcm",
+          question: "Lequel n'est PAS une neuroadaptation décrite après exposition répétée à une substance ?",
+          options: ["La diminution durable du risque de rechute", "La tolérance", "Le sevrage", "La sensibilisation aux indices"],
+          reponse: 0,
+          explication: "Neuroadaptations : tolérance, sevrage, craving, sensibilisation aux indices, et risque PERSISTANT (non diminué) de rechute."
+        },
+        {
+          id: "c9b-h15", niveau: "difficile", notion: "Trouble de l'usage — critères", type: "qcm",
+          question: "Quelle correspondance sévérité/critères est correcte pour le trouble de l'usage ?",
+          options: ["Léger 2-3 · Moyen 4-5 · Grave ≥ 6", "Léger 1 · Moyen 2-3 · Grave 4+", "Léger 2-4 · Moyen 5-7 · Grave 8+", "Léger 3-4 · Moyen 5-6 · Grave 7+"],
+          reponse: 0,
+          explication: "Léger 2-3 · moyen 4-5 · grave ≥ 6 symptômes (sur une période de 12 mois)."
         }
       ]
     },
@@ -1997,6 +2193,55 @@ const QUIZ_DATA = {
           options: ["Vrai", "Faux"],
           reponse: 0,
           explication: "Vrai : antidépresseurs et antipsychotiques atténuent l'anxiété, la tendance suicidaire ou les symptômes psychotiques, mais la pharmacothérapie est jugée peu efficace (avec un risque d'abus). La psychothérapie reste centrale."
+        },
+        {
+          id: "c10-h9", niveau: "difficile", notion: "Les 3 groupes (clusters)", type: "qcm",
+          question: "Quelle prévalence de groupe (cluster) est exacte selon le cours ?",
+          options: ["Groupe B (théâtral/émotif) ≈ 4,5 %", "Groupe A ≈ 9 %", "Groupe C ≈ 4,5 %", "Groupe B ≈ 1 %"],
+          reponse: 0,
+          explication: "Groupe A 3,6 % · Groupe B 4,5 % · Groupe C 2,8 %. Prévalence globale des troubles de la personnalité ≈ 9 %."
+        },
+        {
+          id: "c10-h10", niveau: "difficile", notion: "Groupe B — narcissique", type: "qcm",
+          question: "Quelle prévalence de trouble de la personnalité est exacte ?",
+          options: ["Narcissique ≈ 2 %, plus fréquent chez les hommes", "Borderline ≈ 9 %", "Antisociale ≈ 10 %", "Obsessionnelle-compulsive ≈ 1 %"],
+          reponse: 0,
+          explication: "Narcissique ≈ 2 % (+ H) ; borderline 2-6 % (+ F) ; antisociale 1-4 % (+ H) ; obsessionnelle-compulsive 4-8 % (+ H)."
+        },
+        {
+          id: "c10-h11", niveau: "difficile", notion: "Les 3 groupes (clusters)", type: "qcm",
+          question: "Quelle exigence de nombre de manifestations est correcte ?",
+          options: ["Schizotypique ≥ 5 ; paranoïaque ≥ 4 ; antisociale ≥ 3", "Toutes exigent ≥ 5", "Schizotypique ≥ 4 ; antisociale ≥ 5", "Borderline ≥ 3"],
+          reponse: 0,
+          explication: "≥ 5 : schizotypique, borderline, histrionique, narcissique, dépendante. ≥ 4 : paranoïaque, schizoïde, évitante, obsessionnelle-compulsive. ≥ 3 : antisociale."
+        },
+        {
+          id: "c10-h12", niveau: "difficile", notion: "Groupe B — antisociale", type: "qcm",
+          question: "Selon le cours, quelle proportion des personnes avec une personnalité antisociale a un autre diagnostic psychologique à vie ?",
+          options: ["≈ 90 %", "≈ 50 %", "≈ 25 %", "≈ 10 %"],
+          reponse: 0,
+          explication: "≈ 90 % ont un autre diagnostic à vie ; comorbidité fréquente avec les troubles liés à l'usage d'une substance ; + chez les jeunes adultes et les personnes défavorisées."
+        },
+        {
+          id: "c10-h13", niveau: "difficile", notion: "Groupe A — étiologie & comorbidité", type: "qcm",
+          question: "La personnalité paranoïaque présente une comorbidité notable avec…",
+          options: ["Le TSPT et le trouble lié à l'usage d'une substance", "Les troubles alimentaires", "Le TDAH", "Le trouble bipolaire de type I exclusivement"],
+          reponse: 0,
+          explication: "Paranoïaque : comorbidité avec TP schizotypique/schizoïde/narcissique/évitante, trouble du spectre de la schizophrénie, troubles anxieux, TSPT et trouble lié à l'usage d'une substance."
+        },
+        {
+          id: "c10-h14", niveau: "difficile", notion: "Groupe C — obsessionnelle-compulsive", type: "qcm",
+          question: "Quelle proportion des personnes avec un TOC présente un trouble de la personnalité obsessionnelle-compulsive (TPOC) ?",
+          options: ["Moins de 20 %", "Plus de 80 %", "Environ 50 %", "100 %"],
+          reponse: 0,
+          explication: "Moins de 20 % des personnes avec un TOC présentent un TPOC — les deux sont distincts. Le TPOC est le plus prévalent du groupe C (4-8 %)."
+        },
+        {
+          id: "c10-h15", niveau: "difficile", notion: "Traitement — approches", type: "qcm",
+          question: "Lequel n'est PAS un objectif de la thérapie dialectique comportementale (DBT) de Linehan ?",
+          options: ["Renforcer la pensée « tout noir, tout blanc »", "Moduler les émotions et l'impulsivité", "Tolérer la détresse", "Favoriser l'intégration (synthèse)"],
+          reponse: 0,
+          explication: "La DBT vise au contraire à ÉVITER le « tout noir tout blanc » et à favoriser l'intégration ; elle travaille la maîtrise émotionnelle, la tolérance à la détresse et la confiance en ses propres pensées/émotions."
         }
       ]
     },
@@ -2383,6 +2628,55 @@ const QUIZ_DATA = {
           options: ["ISRS → éjaculation précoce ET troubles paraphiliques ; PDE-5 → dysfonction érectile", "PDE-5 → éjaculation précoce ; ISRS → dysfonction érectile", "Antipsychotiques → dysfonction érectile", "PDE-5 → troubles paraphiliques"],
           reponse: 0,
           explication: "Les ISRS servent à l'éjaculation précoce et, dans les troubles paraphiliques, à réduire les pensées sexuelles intrusives et la compulsivité. Les inhibiteurs de la PDE-5 traitent la dysfonction érectile."
+        },
+        {
+          id: "c11-h9", niveau: "difficile", notion: "Dysphorie de genre — prévalence", type: "qcm",
+          question: "Quelles prévalences le cours indique-t-il pour la dysphorie/incongruence de genre ?",
+          options: ["Transgenres 0,5-0,6 % ; incongruence/divers genres 0,6-1,1 %", "Transgenres 5-6 %", "Transgenres 0,05 %", "Incongruence 10-15 %"],
+          reponse: 0,
+          explication: "Transgenres 0,5-0,6 % ; incongruence de genre/divers genres 0,6-1,1 %. Probable sous-estimation (tous ne consultent pas)."
+        },
+        {
+          id: "c11-h10", niveau: "difficile", notion: "Paraphilies — types", type: "qcm",
+          question: "Selon une étude citée, quelle proportion d'étudiantes a subi au moins un acte de frotteurisme ou d'exhibitionnisme ?",
+          options: ["≈ 44 %", "≈ 10 %", "≈ 75 %", "≈ 5 %"],
+          reponse: 0,
+          explication: "Une étude rapporte que 44 % des étudiantes ont subi au moins un acte de frotteurisme ou d'exhibitionnisme. Le frotteurisme reste peu étudié."
+        },
+        {
+          id: "c11-h11", niveau: "difficile", notion: "Paraphilies — pédophilie & inceste", type: "qcm",
+          question: "Quel est l'ordre de fréquence des formes d'inceste selon le cours ?",
+          options: ["Frère-sœur en premier, puis père-fille", "Père-fille en premier, puis mère-fils", "Père-fils en premier", "Oncle-nièce en premier"],
+          reponse: 0,
+          explication: "Inceste frère-sœur le plus fréquent, suivi de père-fille. C'est une spécification du trouble pédophilie ; les victimes d'inceste sont souvent plus âgées que celles de pédophilie."
+        },
+        {
+          id: "c11-h12", niveau: "difficile", notion: "Dysfonctions sexuelles — types", type: "qcm",
+          question: "Quelle prévalence de dysfonction sexuelle est exacte selon le cours ?",
+          options: ["Trouble lié à des douleurs génito-pelviennes ≈ 15 %", "Diminution du désir chez l'homme ≈ 15 %", "Éjaculation retardée ≈ 20 %", "Dysfonction érectile ≈ 50 % avant 40 ans"],
+          reponse: 0,
+          explication: "Douleurs génito-pelviennes ≈ 15 % ; diminution du désir chez l'homme ≈ 1,8 % ; éjaculation retardée 1-5 % ; dysfonction érectile 13-21 % chez les 40-80 ans (2 % avant 40 ans)."
+        },
+        {
+          id: "c11-h13", niveau: "difficile", notion: "Dysfonctions sexuelles — types", type: "qcm",
+          question: "Concernant l'éjaculation prématurée, lequel est exact ?",
+          options: ["Problème sexuel le plus fréquent chez l'homme ; ≈ 1-3 % (jusqu'à 20-30 % selon l'insatisfaction)", "Survient ~10 min après la pénétration", "Prévalence ≈ 50 %", "Plus fréquent chez les femmes"],
+          reponse: 0,
+          explication: "Éjaculation ~1 minute après la pénétration, avant de le souhaiter, ≥ 6 mois ; problème le plus fréquent chez l'homme ; 1-3 % (20-30 % en mesurant l'insatisfaction de la durée)."
+        },
+        {
+          id: "c11-h14", niveau: "difficile", notion: "Dysfonctions sexuelles — types", type: "qcm",
+          question: "Le trouble de l'orgasme chez la femme est, selon le cours…",
+          options: ["Le 2e problème sexuel le plus courant chez les femmes (≈ 10 % à vie)", "Le plus rare des troubles sexuels", "Toujours d'origine biologique", "Associé à la reproduction comme l'éjaculation"],
+          reponse: 0,
+          explication: "2e problème le plus courant chez les femmes (10 % à vie) ; l'orgasme féminin a un caractère largement appris et n'est pas associé à la reproduction (contrairement à l'éjaculation)."
+        },
+        {
+          id: "c11-h15", niveau: "difficile", notion: "Paraphilies — types", type: "qcm",
+          question: "La coprophilie correspond à une excitation sexuelle suscitée par…",
+          options: ["Les excréments", "L'urine", "Les cadavres", "Les animaux"],
+          reponse: 0,
+          explication: "Coprophilie = excréments ; urophilie = urine ; nécrophilie = cadavres ; zoophilie = animaux ; scatologie téléphonique = appels obscènes ; cystérophilie = lavements (autres troubles paraphiliques spécifiés)."
         }
       ]
     },
@@ -2811,6 +3105,55 @@ const QUIZ_DATA = {
           options: ["Le trouble de la communication sociale (pragmatique) a été ajouté au DSM-5 ; le bégaiement apparaît vers 5 ans et 65-85 % le surmontent", "Le bégaiement apparaît à l'âge adulte", "Le trouble du langage = une prononciation déficiente avec un vocabulaire intact", "La communication sociale pragmatique existait déjà dans le DSM-IV"],
           reponse: 0,
           explication: "Le trouble de la communication sociale (pragmatique) est un ajout du DSM-5. Le bégaiement (trouble de la fluidité) apparaît vers 5 ans, surtout chez les garçons ; 65-85 % le surmontent. (Le trouble du langage concerne l'expression/la grammaire ; la prononciation relève du trouble de la phonation.)"
+        },
+        {
+          id: "c12-h9", niveau: "difficile", notion: "Handicap intellectuel", type: "qcm",
+          question: "Quelle répartition des niveaux de handicap intellectuel (parmi les QI < 70) est exacte ?",
+          options: ["Léger 85 % · moyen 10 % · grave 3-4 % · profond 1-2 %", "Léger 50 % · moyen 30 %", "Profond 85 %", "Moyen 85 %"],
+          reponse: 0,
+          explication: "Léger (QI 50-70) 85 % · moyen 10 % · grave 3-4 % · profond (QI < 20-25) 1-2 % (supervision intégrale, soins infirmiers à vie)."
+        },
+        {
+          id: "c12-h10", niveau: "difficile", notion: "Troubles de la communication", type: "qcm",
+          question: "Concernant le bégaiement (trouble de la fluidité), lequel est exact ?",
+          options: ["Apparition vers 5 ans, surtout chez les garçons ; 65-85 % le surmontent ; la sévérité à 8 ans est pronostique", "Apparition vers 12 ans ; rarement surmonté", "Surtout chez les filles", "Toujours permanent"],
+          reponse: 0,
+          explication: "Bégaiement : vers 5 ans, plus chez les garçons ; 65-85 % le surmontent ; le degré de sévérité à 8 ans détermine la persistance."
+        },
+        {
+          id: "c12-h11", niveau: "difficile", notion: "TSA — sévérité & étiologie", type: "qcm",
+          question: "Toutes ces affirmations sur le TSA sont vraies SAUF une. Laquelle est FAUSSE ?",
+          options: ["Des médicaments traitent les symptômes principaux du TSA", "Héritabilité ≈ 60-90 %, la plus forte", "Aucun médicament ne traite les symptômes principaux", "Interventions psychosociales intensives (~20 h/sem)"],
+          reponse: 0,
+          explication: "Faux : aucun médicament ne traite les symptômes PRINCIPAUX du TSA (les antipsychotiques visent l'agressivité/l'automutilation). Héritabilité 60-90 % (la plus forte) ; interventions intensives ~20 h/sem."
+        },
+        {
+          id: "c12-h12", niveau: "difficile", notion: "TDAH — étiologie", type: "qcm",
+          question: "Quelles données du TDAH sont exactes ?",
+          options: ["Troubles d'apprentissage 15-30 % ; troubles anxieux ≈ 25 % ; héritabilité ≈ 75 %", "Apprentissage 50 % ; anxieux 50 %", "Héritabilité ≈ 10 %", "Aucune comorbidité"],
+          reponse: 0,
+          explication: "TDAH : comorbidité apprentissage 15-30 %, anxieux ≈ 25 % ; héritabilité ≈ 75 % ; circuit frontostriatal, déficit de dopamine."
+        },
+        {
+          id: "c12-h13", niveau: "difficile", notion: "Trouble des conduites", type: "qcm",
+          question: "Concernant le trouble des conduites, lequel est exact ?",
+          options: ["Un début avant 10 ans est plus problématique/persistant ; persistance accrue si faible intelligence verbale ou parent antisocial", "Un début après 15 ans est de plus mauvais pronostic", "Il n'évolue jamais vers la personnalité antisociale", "Un QI verbal élevé aggrave le pronostic"],
+          reponse: 0,
+          explication: "Début < 10 ans = plus grave/persistant. Persistance si garçons à faible intelligence verbale ou parent avec personnalité antisociale ; forme transitoire si QI verbal élevé et parents sans personnalité antisociale."
+        },
+        {
+          id: "c12-h14", niveau: "difficile", notion: "Trouble oppositionnel avec provocation (TOP)", type: "qcm",
+          question: "Le TOP exige au moins 4 symptômes, sur ≥ 6 mois, répartis en combien de catégories ?",
+          options: ["3 (humeur colérique/irritable, querelleur/provocateur, vindicatif)", "2", "4", "1"],
+          reponse: 0,
+          explication: "3 catégories : humeur colérique/irritable, comportement querelleur/provocateur, esprit vindicatif ; ≥ 4 symptômes sur ≥ 6 mois, en interaction avec au moins une personne hors fratrie."
+        },
+        {
+          id: "c12-h15", niveau: "difficile", notion: "Trouble spécifique des apprentissages", type: "qcm",
+          question: "Quelle association est correcte ?",
+          options: ["Dyslexie = lecture, dyscalculie = calcul, dysorthographie = expression écrite ; tics = troubles moteurs", "Dyscalculie = lecture", "Dyslexie = calcul", "Les tics sont des troubles de la communication"],
+          reponse: 0,
+          explication: "Trouble spécifique des apprentissages : dyslexie (lecture), dyscalculie (calcul), dysorthographie (expression écrite). Les tics (dont le syndrome de Gilles de la Tourette) relèvent des troubles moteurs."
         }
       ]
     }
